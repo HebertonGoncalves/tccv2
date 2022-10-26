@@ -1,4 +1,7 @@
 import React from 'react';
+import Card from '@mui/material/Card';
+import Card1 from './src/components/eletricidade/CardTituloEletricidade';
+import Card2 from './src/components/eletricidade/CardVideoEletricidade'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
@@ -7,7 +10,6 @@ import TelaIntroducao from './src/screens/TelaIntroducao';
 function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image source={{ uri: 'https://idocode.com.br/wp-content/uploads/2019/11/Method_Paulo_Freire.jpg' }} style={styles.logo} />
       <Text style={styles.instructions}>
         Inicie os seus estudos com o método Paulo Freire !
       </Text>
@@ -20,6 +22,8 @@ function HomeScreen({ navigation }) {
         style={{ backgroundColor: 'black' }}>
         <Text style={{ fontSize: 20, color: '#fff' }}>Iniciar</Text>
       </TouchableOpacity>
+     <Card1></Card1>
+     <Card2></Card2>
     </View>
   );
 }
