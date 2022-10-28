@@ -6,11 +6,12 @@ import { useNavigation } from '@react-navigation/native';
 export default function CardTituloEletricidade() {
   const navigation = useNavigation(); 
     return (
+
           <Card style={styles.container}>
             <Card.Title style={styles.titulo} title="Eletricidade" subtitle="Lei de Ohm"  />
             <Card.Cover style={styles.image} source={{ uri: 'https://s1.static.brasilescola.uol.com.br/be/2022/07/relacao-tensao-corrente-resistencia-eletricas.jpg' }} />
             <Card.Actions>
-              <Button onPress={() => navigation.navigate("TelaIntroducao")}>Iniciar</Button>
+              <Button onPress={() => navigation.navigate("ModeloConteudos")}>Iniciar</Button>
             </Card.Actions>
           </Card>
 

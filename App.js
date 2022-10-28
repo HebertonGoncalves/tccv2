@@ -1,15 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Image, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, Button, SafeAreaView, ScrollView } from 'react-native';
 import TelaIntroducao from './src/screens/TelaIntroducao';
-import { ScrollView } from 'react-native-web';
 import Cartao from './src/components/eletricidade/CardTituloEletricidade'
+import ModeloConteudos from './src/components/ModeloConteudos'
+
 
 function HomeScreen({ navigation }) {
   return (
 
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Text>adas</Text>
+      <ScrollView style={styles.scrollView}>
       <Text style={styles.instructions}>
         Inicie os seus estudos com o método
       </Text>
@@ -19,12 +22,18 @@ function HomeScreen({ navigation }) {
       />
       <TouchableOpacity
         onPress={() => alert('Resposta correta !')}
-        style={{ backgroundColor: 'black' }}>
+        style={{ backgroundColor: 'blue' }}>
         <Text style={{ fontSize: 20, color: '#fff' }}>Iniciar</Text>
       </TouchableOpacity>
-      
       <Cartao/>
-    </View>
+      <Cartao/>
+      <Cartao/>
+      <Cartao/>
+      <Cartao/>
+      <Cartao/>
+      </ScrollView>
+      <Text>adas</Text>
+    </SafeAreaView>
   
   );
 }
@@ -41,9 +50,13 @@ function DetailsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#245',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  scrollView: {
+    backgroundColor: 'red',
+    marginHorizontal: 20,
   },
   logo: {
     width: 305,
@@ -67,6 +80,7 @@ function App() {
         <Stack.Screen name="home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
+        <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
       </Stack.Navigator>
     </NavigationContainer>
   );
