@@ -1,17 +1,17 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import Card1 from './src/components/eletricidade/CardTituloEletricidade';
-import Card2 from './src/components/eletricidade/CardVideoEletricidade'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
 import TelaIntroducao from './src/screens/TelaIntroducao';
+import { ScrollView } from 'react-native-web';
+import Cartao from './src/components/eletricidade/CardTituloEletricidade'
 
 function HomeScreen({ navigation }) {
   return (
+
     <View style={styles.container}>
       <Text style={styles.instructions}>
-        Inicie os seus estudos com o método Paulo Freire !
+        Inicie os seus estudos com o método
       </Text>
       <Button
         title="Introducao"
@@ -22,9 +22,10 @@ function HomeScreen({ navigation }) {
         style={{ backgroundColor: 'black' }}>
         <Text style={{ fontSize: 20, color: '#fff' }}>Iniciar</Text>
       </TouchableOpacity>
-     <Card1></Card1>
-     <Card2></Card2>
+      
+      <Cartao/>
     </View>
+  
   );
 }
 
@@ -65,7 +66,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
-        <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />  
+        <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
       </Stack.Navigator>
     </NavigationContainer>
   );

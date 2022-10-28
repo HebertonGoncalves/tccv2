@@ -1,32 +1,48 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { StyleSheet } from 'react-native';
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 export default function CardTituloEletricidade() {
-  return (
-    <Card sx={{ maxWidth: 300 }}>
-      <CardMedia
-        component="img"
-        height="100"
-        image="https://www.inovacaotecnologica.com.br/noticias/imagens/010160201006-diamante-metalico-2.jpg"
-        alt="Eletricidade"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Eletricidade
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        A eletricidade é um termo geral que abrange uma variedade de fenômenos resultantes da presença e do fluxo de carga elétrica...
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Conteudo</Button>
-        <Button size="small">Videos</Button>
-      </CardActions>
-    </Card>
-  );
-}
+  const navigation = useNavigation(); 
+    return (
+          <Card style={styles.container}>
+            <Card.Title style={styles.titulo} title="Eletricidade" subtitle="Lei de Ohm"  />
+            <Card.Cover style={styles.image} source={{ uri: 'https://s1.static.brasilescola.uol.com.br/be/2022/07/relacao-tensao-corrente-resistencia-eletricas.jpg' }} />
+            <Card.Actions>
+              <Button onPress={() => navigation.navigate("TelaIntroducao")}>Iniciar</Button>
+            </Card.Actions>
+          </Card>
+
+        );
+        
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 300,
+      maxHeight: 340,
+      marginBottom: 20,
+      borderRadius: 10,
+      borderWidth: 5
+    },
+    image: {
+      width: 250,
+      height: 159,
+      marginBottom: 20,
+      borderRadius: 5,
+      borderWidth: 2
+    },
+    titulo: {
+      
+
+      marginHorizontal: 10,
+      marginBottom: 10,
+    },
+  });  
+
+
