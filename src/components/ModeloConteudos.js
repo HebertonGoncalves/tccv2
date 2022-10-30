@@ -7,21 +7,21 @@ import { List } from 'react-native-paper';
   const handlePress = () => setExpanded(!expanded);
 
   return (
-    <List.Section title="Accordions">
+    <List.Section title="Conteudos">
       <List.Accordion
-        title="Uncontrolled Accordion"
+        title="Videos"
         left={props => <List.Icon {...props} icon="folder" />}>
-        <List.Item title="First item" />
-        <List.Item title="Second item" />
+        <List.Item title="Videoaula 1" />
+        <List.Item title="Videoaula 2" />
       </List.Accordion>
 
       <List.Accordion
-        title="Controlled Accordion"
+        title="Textos"
         left={props => <List.Icon {...props} icon="folder" />}
         expanded={expanded}
         onPress={handlePress}>
-        <List.Item title="First item" />
-        <List.Item title="Second item" />
+        <List.Item title="Aula 1" />
+        <List.Item title="Aula 2" />
       </List.Accordion>
     </List.Section>
   );
