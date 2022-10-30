@@ -23,6 +23,13 @@ import { List } from 'react-native-paper';
         <List.Item title="Aula 1" />
         <List.Item title="Aula 2" />
       </List.Accordion>
+
+      <List.Accordion
+        title="Atividades"
+        left={props => <List.Icon {...props} icon="folder" />}>
+        <List.Item title="Atividade 1" />
+        <List.Item title="Atividade 2" />
+      </List.Accordion>
     </List.Section>
   );
 };
