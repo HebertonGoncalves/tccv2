@@ -22,7 +22,7 @@ import { useNavigation } from '@react-navigation/native';
         left={props => <List.Icon {...props} icon="folder" />}
         expanded={expanded}
         onPress={handlePress}>
-        <List.Item title="Aula 1" />
+        <List.Item onPress={() => navigation.navigate("Conteudo")} title="Aula 1" />
         <List.Item title="Aula 2" />
       </List.Accordion>
 

@@ -5,6 +5,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View, Button, SafeAreaView, 
 import TelaIntroducao from './src/screens/TelaIntroducao';
 import Cartao from './src/components/eletricidade/CardTituloEletricidade'
 import ModeloConteudos from './src/components/ModeloConteudos'
+import Conteudo from './src/components/Conteudo';
 
 
 function HomeScreen({ navigation }) {
@@ -50,13 +51,14 @@ function DetailsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#245',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   scrollView: {
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
     marginHorizontal: 20,
+    padding: 10
   },
   logo: {
     width: 305,
@@ -81,6 +83,7 @@ function App() {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
+        <Stack.Screen name="Conteudo" component={Conteudo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

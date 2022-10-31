@@ -1,4 +1,3 @@
-//Modelo de tela para apresentaçãõ de textos
 //Modelo de tela para atividades
 
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native"
@@ -7,7 +6,6 @@ import * as React from 'react';
 import { RadioButton } from 'react-native-paper';
 
 export default function Atividade(){
-  const [checked, setChecked] = React.useState('first');
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView}>
@@ -34,11 +32,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                     status={ checked === 'second' ? 'checked' : 'unchecked' }
                     onPress={() => setChecked('second')}
                 />
-                <RadioButton
-                    value="third"
-                    status={ checked === 'third' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('third')}
-                >teste</RadioButton>
             </ScrollView>
         </SafeAreaView>
     )
