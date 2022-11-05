@@ -6,32 +6,18 @@ import * as React from 'react';
 import { RadioButton } from 'react-native-paper';
 
 export default function Atividade(){
+  const [checked, setChecked] = React.useState('first');
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView}>
-                <Text>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
-                <Text></Text>
-                <Text>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
-                <Text></Text>
-<Text>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
-                <Text></Text>
-                <Text>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Text>
-                <Text></Text>
-                <Button>Avançar</Button>
-                <RadioButton
-                    value="first"
-                    status={ checked === 'first' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('first')}
-                />
-                <RadioButton
-                    value="second"
-                    status={ checked === 'second' ? 'checked' : 'unchecked' }
-                    onPress={() => setChecked('second')}
-                />
+              <View style={styles.View}>
+                <Text>Qual das alternativas representa a entrada de um sistema ?</Text>
+                <RadioButton.Item label="botao" value="primeiro" status={ checked === 'primeiro' ? 'checked' : 'unchecked' } onPress={() => setChecked('primeiro')}/>
+                <RadioButton.Item label="botao" value="segundo" status={ checked === 'segundo' ? 'checked' : 'unchecked' } onPress={() => setChecked('segundo')}/>
+                <RadioButton.Item label="botao" value="terceiro" status={ checked === 'terceiro' ? 'checked' : 'unchecked' } onPress={() => setChecked('terceiro')}/>
+                <RadioButton.Item label="botao" value="quarto" status={ checked === 'quarto' ? 'checked' : 'unchecked' } onPress={() => setChecked('quarto')}/>
+              </View> 
+              <Button>Avançar</Button>
             </ScrollView>
         </SafeAreaView>
     )
@@ -51,10 +37,9 @@ const styles = StyleSheet.create({
       padding:10,
       margin: 5
     },
-    logo: {
-      width: 305,
-      height: 159,
-      marginBottom: 20,
+    View: {
+      border: 2,
+      borderColor: '#fff',
     },
     instructions: {
       color: '#888',

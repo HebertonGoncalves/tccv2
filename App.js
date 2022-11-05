@@ -6,7 +6,7 @@ import TelaIntroducao from './src/screens/TelaIntroducao';
 import Cartao from './src/components/eletricidade/CardTituloEletricidade'
 import ModeloConteudos from './src/components/ModeloConteudos'
 import Conteudo from './src/components/Conteudo';
-
+import Atividade from './src/components/Atividade';
 
 function HomeScreen({ navigation }) {
   return (
@@ -84,6 +84,7 @@ function App() {
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
         <Stack.Screen name="Conteudo" component={Conteudo} />
+        <Stack.Screen name="Atividade" component={Atividade}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

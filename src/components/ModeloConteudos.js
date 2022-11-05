@@ -29,7 +29,7 @@ import { useNavigation } from '@react-navigation/native';
       <List.Accordion
         title="Atividades"
         left={props => <List.Icon {...props} icon="folder" />}>
-        <List.Item title="Atividade 1" />
+        <List.Item onPress={() => navigation.navigate("Atividade")} title="Atividade 1" />
         <List.Item title="Atividade 2" />
       </List.Accordion>
     </List.Section>
