@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image, StyleSheet, Text, TouchableOpacity, View, Button, SafeAreaView, ScrollView } from 'react-native';
 import TelaIntroducao from './src/screens/TelaIntroducao';
 import Cartao from './src/components/eletricidade/CardTituloEletricidade'
+import Card from './src/components/ModeloCard'
 import ModeloConteudos from './src/components/ModeloConteudos'
 import Conteudo from './src/components/Conteudo';
 import Atividade from './src/components/Atividade';
@@ -12,10 +13,10 @@ function HomeScreen({ navigation }) {
   return (
 
     <SafeAreaView style={styles.container}>
-      <Text>adas</Text>
+      <Text>SafeAreaView</Text>
       <ScrollView style={styles.scrollView}>
       <Text style={styles.instructions}>
-        Inicie os seus estudos com o método
+        scrollView
       </Text>
       <Button
         title="Introducao"
@@ -27,13 +28,14 @@ function HomeScreen({ navigation }) {
         <Text style={{ fontSize: 20, color: '#fff' }}>Iniciar</Text>
       </TouchableOpacity>
       <Cartao/>
+      <Card/>
       <Cartao/>
+      <Card/>
       <Cartao/>
-      <Cartao/>
-      <Cartao/>
-      <Cartao/>
+      <Card/>
+      <Text>scrollView</Text>
       </ScrollView>
-      <Text>adas</Text>
+      <Text>SafeAreaView</Text>
     </SafeAreaView>
   
   );
