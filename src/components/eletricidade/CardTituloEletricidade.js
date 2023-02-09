@@ -8,8 +8,8 @@ export default function CardTituloEletricidade() {
     return (
 
           <Card style={styles.container}>
-            <Card.Title style={styles.titulo} title="Eletricidade" subtitle="Lei de Ohm"  />
-            <Card.Cover style={styles.image} source={{ uri: 'https://s1.static.brasilescola.uol.com.br/be/2022/07/relacao-tensao-corrente-resistencia-eletricas.jpg' }} />
+            {/*<Card.Title style={styles.titulo} title="Eletricidade"/>*/}
+            <Card.Cover style={styles.image} source={{ uri: 'https://i.pinimg.com/originals/60/f7/fc/60f7fc0bd47779e25842cda190b924b2.jpg' }} />
             <Card.Actions>
               <Button onPress={() => navigation.navigate("ModeloConteudos")}>Iniciar</Button>
             </Card.Actions>
@@ -29,18 +29,17 @@ export default function CardTituloEletricidade() {
       maxHeight: 340,
       marginBottom: 20,
       borderRadius: 10,
-      borderWidth: 5
+      borderWidth: 5,
     },
     image: {
-      width: 250,
-      height: 159,
+      width: 300,
+      height: 220,
       marginBottom: 20,
       borderRadius: 5,
       borderWidth: 2
     },
     titulo: {
-      
-
+      alignContent: "center",
       marginHorizontal: 10,
       marginBottom: 10,
     },

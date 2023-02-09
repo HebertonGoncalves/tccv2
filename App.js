@@ -31,8 +31,6 @@ function HomeScreen({ navigation }) {
       <Card/>
       <Cartao/>
       <Card/>
-      <Cartao/>
-      <Card/>
       <Text>scrollView</Text>
       </ScrollView>
       <Text>SafeAreaView</Text>

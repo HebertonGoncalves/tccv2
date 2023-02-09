@@ -1,15 +1,27 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, Button, ImageBackground } from 'react-native';
 //import { NavigationContainer } from '@react-navigation/native';
 //import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const image = {uri: 'https://i.pinimg.com/originals/60/f7/fc/60f7fc0bd47779e25842cda190b924b2.jpg'};
+
 export default function TelaIntroducao({navigation}) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Introducão: O Método Paulo Freire consiste numa proposta para a alfabetização de adultos desenvolvida pelo educador Paulo Freire. O método foi desenvolvido enquanto Freire era diretor do Departamento de Extensões Culturais da Universidade do Recife, adotando-o com um grupo de teste na cidade de Angicos, no Rio Grande do Norte</Text>
+      <ImageBackground source={image} style={styles.container}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>    
+        <Text>Introducão: O Método Pa</Text>
         <Button
           title="Home"
           onPress={() => navigation.navigate("home")}
         />
-      </View>
+        </View>
+      </ImageBackground>
     );
   }
+
+  const styles = StyleSheet.create({
+    container:{
+      flex:1,
+      width:"100%",
+      height:"100%"
+    }
+  })
