@@ -1,39 +1,45 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Image, StyleSheet, Text, TouchableOpacity, View, Button, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Button, SafeAreaView, ScrollView } from 'react-native';
 import TelaIntroducao from './src/screens/TelaIntroducao';
-import Cartao from './src/components/eletricidade/CardTituloEletricidade'
-import Card from './src/components/ModeloCard'
 import ModeloConteudos from './src/components/ModeloConteudos'
 import Conteudo from './src/components/Conteudo';
 import Atividade from './src/components/Atividade';
+import * as Progress from 'react-native-progress';
+
+var valorProgresso = 0.25;
+var progresso = valorProgresso*100;
 
 function HomeScreen({ navigation }) {
   return (
-
-    <SafeAreaView style={styles.container}>
-      <Text>SafeAreaView</Text>
-      <ScrollView style={styles.scrollView}>
-      <Text style={styles.instructions}>
-        scrollView
-      </Text>
-      <Button
-        title="Introducao"
-        onPress={() => navigation.navigate("TelaIntroducao")}
-      />
+    <SafeAreaView style={styles.container1}>
+      <Text style={styles.bemvindo}>Bem vindo, Heberton!</Text>
+      <Text style={styles.bemvindo}>Progresso: {progresso}%</Text>
+      <Progress.Bar progress={valorProgresso} width={200} height={20} />
+      
+      <SafeAreaView style={styles.container2}>
       <TouchableOpacity
-        onPress={() => alert('Resposta correta !')}
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>Iniciar</Text>
+        onPress={() => navigation.navigate("ModeloConteudos")}
+        style={styles.cartoes}>
+        <Text style={styles.textoCartoes}>Eletricidade</Text>
       </TouchableOpacity>
-      <Cartao/>
-      <Card/>
-      <Cartao/>
-      <Card/>
-      <Text>scrollView</Text>
-      </ScrollView>
-      <Text>SafeAreaView</Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ModeloConteudos")}
+        style={styles.cartoes}>
+        <Text style={styles.textoCartoes}>Eletrônica</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ModeloConteudos")}
+        style={styles.cartoes}>
+        <Text style={styles.textoCartoes}>Pneumática</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ModeloConteudos")}
+        style={styles.cartoes}>
+        <Text style={styles.textoCartoes}>CLPs</Text>
+      </TouchableOpacity>
+      </SafeAreaView>
     </SafeAreaView>
   
   );
@@ -49,16 +55,18 @@ function DetailsScreen() {
 
 
 const styles = StyleSheet.create({
-  container: {
+  container1: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000',
+    padding: 20,
   },
-  scrollView: {
-    backgroundColor: '#fff',
-    marginHorizontal: 20,
-    padding: 10
+  container2: {
+    flex: 1,
+    flexDirection:'row',
+    flexWrap: 'wrap',
+    backgroundColor: '#000',
+    padding: 20,
+    alignContent: 'center'
   },
   logo: {
     width: 305,
@@ -70,6 +78,26 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginHorizontal: 15,
     marginBottom: 10,
+  },
+  bemvindo: {
+    color: '#AAA',
+    fontSize: 20,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  cartoes: { 
+    backgroundColor: 'blue',
+    width: 150, 
+    height: 150, 
+    position: "relative", 
+    justifyContent: "center", 
+    alignItems: "center",
+    borderRadius: 20,
+    margin: 5,
+  },
+  textoCartoes: { 
+    fontSize: 20, 
+    color: '#fff',
   },
 });
 
