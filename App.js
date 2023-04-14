@@ -15,10 +15,11 @@ function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container1}>
       <Text style={styles.bemvindo}>Bem vindo, Heberton!</Text>
-      <Text style={styles.bemvindo}>Progresso: {progresso}%</Text>
+      <Text style={styles.progresso}>Progresso: {progresso}%</Text>
       <Progress.Bar progress={valorProgresso} width={200} height={20} />
       
       <SafeAreaView style={styles.container2}>
+      <Text style={styles.bemvindo}>O que vamos aprender hoje?</Text>
       <TouchableOpacity
         onPress={() => navigation.navigate("ModeloConteudos")}
         style={styles.cartoes}>
@@ -57,14 +58,14 @@ function DetailsScreen() {
 const styles = StyleSheet.create({
   container1: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#012a4a',
     padding: 20,
   },
   container2: {
     flex: 1,
     flexDirection:'row',
     flexWrap: 'wrap',
-    backgroundColor: '#000',
+    backgroundColor: '#012a4a',
     padding: 20,
     alignContent: 'center'
   },
@@ -80,13 +81,21 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   bemvindo: {
-    color: '#AAA',
-    fontSize: 20,
+    color: '#fff',
+    fontSize: 30,
     marginTop: 10,
     marginBottom: 10,
+    textDecorationStyle: "solid",
+  },
+  progresso: {
+    color: '#fff',
+    fontSize: 15,
+    marginTop: 10,
+    marginBottom: 10,
+    textDecorationStyle: "solid",
   },
   cartoes: { 
-    backgroundColor: 'blue',
+    backgroundColor: '#014f86',
     width: 150, 
     height: 150, 
     position: "relative", 
@@ -107,7 +116,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="home" component={HomeScreen} />
+        <Stack.Screen name="Automação" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />

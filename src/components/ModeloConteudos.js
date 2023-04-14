@@ -1,17 +1,21 @@
-import { StyleSheet, TouchableOpacity, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, ImageBackground } from 'react-native';
 
 export default function ModeloConteudos({navigation}) {
     return (
       
           <SafeAreaView style={styles.container}>
-            <TouchableOpacity style={[styles.cartoes, styles.green]}>
+            <TouchableOpacity style={[styles.cartoes]}>
+              <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
               <Text style={styles.textoCartoes}>Arquivos</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.cartoes, styles.red]}>
+            <TouchableOpacity style={[styles.cartoes]}>
               <Text style={styles.textoCartoes}>Ativides Avaliativas</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.cartoes, styles.yellow]}>
+            <TouchableOpacity style={[styles.cartoes]}>
               <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.cartoes]}>
+              <Text style={styles.textoCartoes}>Avaliação Final</Text>
             </TouchableOpacity>
           </SafeAreaView>
 
@@ -20,43 +24,31 @@ export default function ModeloConteudos({navigation}) {
 
   const styles = StyleSheet.create({
     container:{
-      flex:1,
-      backgroundColor: 'blue',
       flex: 1,
       flexDirection:'row',
       flexWrap: 'wrap',
+      backgroundColor: '#012a4a',
       padding: 20,
-      alignContent: 'center',
-      width:"100%",
-      height:"100%"
+      alignContent: 'center'
     },
     cartoes: {
-      width: 150, 
-      height: 150, 
+      width: 120, 
+      height: 120, 
       position: "relative", 
       justifyContent: "center", 
       alignItems: "center",
-      borderRadius: 20,
+      borderRadius: 10,
       margin: 5,
+      backgroundColor: "#023e8a"
+    },
+    iconecartoes:{
+        height:30,
+        width:30,
+        margin: 5,
     },
     textoCartoes: { 
-      fontSize: 20, 
+      fontSize: 15, 
       color: '#fff',
       textAlign: 'center',
-    },
-    red: { 
-      backgroundColor: 'red',
-    },
-    blue: { 
-      backgroundColor: 'blue',
-    },
-    black: { 
-      backgroundColor: 'black',
-    },
-    green: { 
-      backgroundColor: 'green',
-    },
-    yellow: { 
-      backgroundColor: 'yellow',
     },
   })
