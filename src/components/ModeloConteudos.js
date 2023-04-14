@@ -1,25 +1,28 @@
-import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, ImageBackground } from 'react-native';
+import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image } from 'react-native';
 
 export default function ModeloConteudos({navigation}) {
     return (
       
           <SafeAreaView style={styles.container}>
-            <TouchableOpacity style={[styles.cartoes]}>
-              <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
-              <Text style={styles.textoCartoes}>Arquivos</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.cartoes]}>
-              <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
-              <Text style={styles.textoCartoes}>Ativides Avaliativas</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.cartoes]}>
-              <Image style={styles.iconecartoes} source={require('../images/videos.png')} />
-              <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.cartoes]}>
-              <Image style={styles.iconecartoes} source={require('../images/prova.png')} />
-              <Text style={styles.textoCartoes}>Avaliação Final</Text>
-            </TouchableOpacity>
+            <Text style={styles.titulo} >Eletricidade</Text>
+            <SafeAreaView style={styles.container2}>
+              <TouchableOpacity style={[styles.cartoes]}>
+                <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
+                <Text style={styles.textoCartoes}>Arquivos</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.cartoes]}>
+                <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
+                <Text style={styles.textoCartoes}>Ativides Avaliativas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.cartoes]}>
+                <Image style={styles.iconecartoes} source={require('../images/videos.png')} />
+                <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={[styles.cartoes]}>
+                <Image style={styles.iconecartoes} source={require('../images/prova.png')} />
+                <Text style={styles.textoCartoes}>Avaliação Final</Text>
+              </TouchableOpacity>
+            </SafeAreaView>
           </SafeAreaView>
 
     );
@@ -27,6 +30,11 @@ export default function ModeloConteudos({navigation}) {
 
   const styles = StyleSheet.create({
     container:{
+      flex: 1,
+      backgroundColor: '#012a4a',
+      padding: 20,
+    },
+    container2:{
       flex: 1,
       flexDirection:'row',
       flexWrap: 'wrap',
@@ -50,6 +58,11 @@ export default function ModeloConteudos({navigation}) {
         margin: 5,
     },
     textoCartoes: { 
+      fontSize: 15, 
+      color: '#fff',
+      textAlign: 'center',
+    },
+    titulo: { 
       fontSize: 15, 
       color: '#fff',
       textAlign: 'center',
