@@ -5,16 +5,19 @@ export default function ModeloConteudos({navigation}) {
       
           <SafeAreaView style={styles.container}>
             <TouchableOpacity style={[styles.cartoes]}>
-              <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
+              <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
               <Text style={styles.textoCartoes}>Arquivos</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.cartoes]}>
+              <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
               <Text style={styles.textoCartoes}>Ativides Avaliativas</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.cartoes]}>
+              <Image style={styles.iconecartoes} source={require('../images/videos.png')} />
               <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.cartoes]}>
+              <Image style={styles.iconecartoes} source={require('../images/prova.png')} />
               <Text style={styles.textoCartoes}>Avaliação Final</Text>
             </TouchableOpacity>
           </SafeAreaView>
@@ -39,7 +42,7 @@ export default function ModeloConteudos({navigation}) {
       alignItems: "center",
       borderRadius: 10,
       margin: 5,
-      backgroundColor: "#023e8a"
+      backgroundColor: "#5c677d"
     },
     iconecartoes:{
         height:30,

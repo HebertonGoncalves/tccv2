@@ -10,13 +10,14 @@ import * as Progress from 'react-native-progress';
 
 var valorProgresso = 0.25;
 var progresso = valorProgresso*100;
+var aluno = 'Heberton';
 
 function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container1}>
-      <Text style={styles.bemvindo}>Bem vindo, Heberton!</Text>
+      <Text style={styles.bemvindo}>Bem vindo, {aluno}!</Text>
       <Text style={styles.progresso}>Progresso: {progresso}%</Text>
-      <Progress.Bar progress={valorProgresso} width={200} height={20} />
+      <Progress.Bar progress={valorProgresso} width={200} height={20} color='#0353a4' marginLeft= {10} />
       
       <SafeAreaView style={styles.container2}>
       <Text style={styles.bemvindo}>O que vamos aprender hoje?</Text>
@@ -86,22 +87,24 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     textDecorationStyle: "solid",
+    marginLeft: 10,
   },
   progresso: {
     color: '#fff',
     fontSize: 15,
     marginTop: 10,
     marginBottom: 10,
+    marginLeft: 10,
     textDecorationStyle: "solid",
   },
   cartoes: { 
-    backgroundColor: '#014f86',
+    backgroundColor: '#001233',
     width: 150, 
     height: 150, 
     position: "relative", 
     justifyContent: "center", 
     alignItems: "center",
-    borderRadius: 20,
+    borderRadius: 10,
     margin: 5,
   },
   textoCartoes: { 
