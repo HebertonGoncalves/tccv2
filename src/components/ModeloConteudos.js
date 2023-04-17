@@ -1,12 +1,24 @@
-import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight } from 'react-native';
 
 export default function ModeloConteudos({navigation}) {
+
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const handlePress = () => {
+    setMenuVisible(true);
+  };
+
+  const handleClose = () => {
+    setMenuVisible(false);
+  };
+
     return (
       
           <SafeAreaView style={styles.container}>
             <Text style={styles.titulo} >Eletricidade</Text>
             <SafeAreaView style={styles.container2}>
-              <TouchableOpacity style={[styles.cartoes]}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
                 <Text style={styles.textoCartoes}>Arquivos</Text>
               </TouchableOpacity>
@@ -18,10 +30,28 @@ export default function ModeloConteudos({navigation}) {
                 <Image style={styles.iconecartoes} source={require('../images/videos.png')} />
                 <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
                 <Image style={styles.iconecartoes} source={require('../images/prova.png')} />
                 <Text style={styles.textoCartoes}>Avaliação Final</Text>
               </TouchableOpacity>
+                  {menuVisible && (
+                    <TouchableHighlight style={styles.menu} onPress={handleClose}>
+                      <View >
+                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                          <Text style={styles.textominicartao}>Cap. I: Introdução à Eletricidade: Conceitos Fundamentais e Princípios Básicos</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                          <Text style={styles.textominicartao}>Cap. II: Circuitos Elétricos: Leis de Ohm, Kirchhoff e Circuitos RL, RC e RLC</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                          <Text style={styles.textominicartao}>Cap. III: Fontes de Energia Elétrica: Geradores, Baterias e Fontes Alternativas</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                          <Text style={styles.textominicartao}>Cap. IV: Dispositivos Eletrônicos: Diodos, Transistores e Circuitos Integrados</Text>
+                        </TouchableOpacity>
+                       </View>
+                      </TouchableHighlight>
+                      )}
             </SafeAreaView>
           </SafeAreaView>
 
@@ -32,7 +62,7 @@ export default function ModeloConteudos({navigation}) {
     container:{
       flex: 1,
       backgroundColor: '#012a4a',
-      padding: 20,
+      padding: 10,
     },
     container2:{
       flex: 1,
@@ -63,8 +93,37 @@ export default function ModeloConteudos({navigation}) {
       textAlign: 'center',
     },
     titulo: { 
-      fontSize: 15, 
+      fontWeight: 'bold', 
       color: '#fff',
       textAlign: 'center',
+      fontSize: 20,
     },
+    menu: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      padding: 20,
+    },
+    textominicartao: {
+      color: '#0c4b9c',
+      fontSize: 14,
+      fontWeight: 'bold',
+      textAlign: 'left',
+      marginHorizontal: 0,
+    },
+    minicartao:{
+      width: 350,
+      height: 60,
+      borderRadius: 7,
+      backgroundColor: '#EBEDEF',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderColor: "grey",
+      borderWidth: 2,
+    }
   })
