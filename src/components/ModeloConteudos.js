@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight, Linking } from 'react-native';
 
 export default function ModeloConteudos({navigation}) {
 
@@ -13,6 +13,9 @@ export default function ModeloConteudos({navigation}) {
     setMenuVisible(false);
   };
 
+  const handleOpenPdf = () => {
+    Linking.openURL('https://1drv.ms/b/s!AminYboO2YizahFhsHQhAOglb_8?e=cuyATK'); // cap 1 eletricidade
+  };
     return (
       
           <SafeAreaView style={styles.container}>
@@ -37,7 +40,7 @@ export default function ModeloConteudos({navigation}) {
                   {menuVisible && (
                     <TouchableHighlight style={styles.menu} onPress={handleClose}>
                       <View >
-                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf}>
                           <Text style={styles.textominicartao}>Cap. I: Introdução à Eletricidade: Conceitos Fundamentais e Princípios Básicos</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
