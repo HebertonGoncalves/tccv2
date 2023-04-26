@@ -14,8 +14,10 @@ export default function ModeloConteudos({navigation}) {
   };
 
   const handleOpenPdf = () => {
-    Linking.openURL('https://1drv.ms/b/s!AminYboO2YizahFhsHQhAOglb_8?e=cuyATK'); // cap 1 eletricidade
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); // cap 1 eletricidade ou video
   };
+
+
     return (
       
           <SafeAreaView style={styles.container}>
@@ -25,7 +27,7 @@ export default function ModeloConteudos({navigation}) {
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
                 <Text style={styles.textoCartoes}>Arquivos</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")}>
                 <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
                 <Text style={styles.textoCartoes}>Ativides Avaliativas</Text>
               </TouchableOpacity>
