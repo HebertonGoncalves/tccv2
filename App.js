@@ -2,17 +2,27 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView } from 'react-native';
+import { useState } from 'react';
 import TelaIntroducao from './src/screens/TelaIntroducao';
 import ModeloConteudos from './src/components/ModeloConteudos'
-import Conteudo from './src/components/Conteudo';
 import Atividade from './src/components/Atividade';
 import * as Progress from 'react-native-progress';
+import ModeloAtividade from './src/components/ModeloAtividade';
 
-var valorProgresso = 0.25;
-var progresso = valorProgresso*100;
+
+
 var aluno = 'Heberton';
 
 function HomeScreen({ navigation }) {
+
+  const [valorProgresso, setValor] = useState(0)
+  function aumentaProgresso(){
+      return setValor(valorProgresso+0.25);
+  }
+  var progresso = valorProgresso*100;
+  if(progresso>100){progresso=100};
+
+
   return (
     <SafeAreaView style={styles.container1}>
       <Text style={styles.bemvindo}>Bem vindo, {aluno}!</Text>
@@ -23,21 +33,25 @@ function HomeScreen({ navigation }) {
       <Text style={styles.bemvindo}>O que vamos aprender hoje?</Text>
       <TouchableOpacity
         onPress={() => navigation.navigate("ModeloConteudos")}
+        onPressOut={aumentaProgresso}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>Eletricidade</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.navigate("ModeloConteudos")}
+        onPressOut={aumentaProgresso}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>Eletrônica</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.navigate("ModeloConteudos")}
+        onPressOut={aumentaProgresso}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>Pneumática</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.navigate("ModeloConteudos")}
+        onPressOut={aumentaProgresso}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>CLPs</Text>
       </TouchableOpacity>
@@ -123,7 +137,7 @@ function App() {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
-        <Stack.Screen name="Conteudo" component={Conteudo} />
+        <Stack.Screen name="ModeloAtividade" component={ModeloAtividade} />
         <Stack.Screen name="Atividade" component={Atividade}/>
       </Stack.Navigator>
     </NavigationContainer>

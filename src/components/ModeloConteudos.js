@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight, Linking } from 'react-native';
 
+
 export default function ModeloConteudos({navigation}) {
 
   const [menuVisible, setMenuVisible] = useState(false);
@@ -22,6 +23,7 @@ export default function ModeloConteudos({navigation}) {
       
           <SafeAreaView style={styles.container}>
             <Text style={styles.titulo} >Eletricidade</Text>
+            <Text style={styles.titulo}>A eletricidade é a principal forma de energia usada para o funcionamento dos componentes da automação industrial.</Text>
             <SafeAreaView style={styles.container2}>
               <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
@@ -29,7 +31,7 @@ export default function ModeloConteudos({navigation}) {
               </TouchableOpacity>
               <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")}>
                 <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
-                <Text style={styles.textoCartoes}>Ativides Avaliativas</Text>
+                <Text style={styles.textoCartoes}>Ativide Avaliativa</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.cartoes]}>
                 <Image style={styles.iconecartoes} source={require('../images/videos.png')} />
@@ -37,7 +39,7 @@ export default function ModeloConteudos({navigation}) {
               </TouchableOpacity>
               <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
                 <Image style={styles.iconecartoes} source={require('../images/prova.png')} />
-                <Text style={styles.textoCartoes}>Avaliação Final</Text>
+                <Text style={styles.textoCartoes}>Aprenda Mais</Text>
               </TouchableOpacity>
                   {menuVisible && (
                     <TouchableHighlight style={styles.menu} onPress={handleClose}>
@@ -75,7 +77,9 @@ export default function ModeloConteudos({navigation}) {
       flexWrap: 'wrap',
       backgroundColor: '#012a4a',
       padding: 20,
-      alignContent: 'center'
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center'
     },
     cartoes: {
       width: 120, 
