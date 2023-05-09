@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight, Linking } from 'react-native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ModeloConteudos({navigation}) {
+
+    const Armazenar = async (chave, valor) => {
+      try {
+        const jsonValue = JSON.stringify(valor)
+        await AsyncStorage.setItem(chave, jsonValue)
+      } catch (e) {
+        console.log(e)
+      }
+    }
 
   const [menuVisible, setMenuVisible] = useState(false);
 
@@ -25,20 +34,20 @@ export default function ModeloConteudos({navigation}) {
             <Text style={styles.titulo} >Eletricidade</Text>
             <Text style={styles.titulo}>A eletricidade é a principal forma de energia usada para o funcionamento dos componentes da automação industrial.</Text>
             <SafeAreaView style={styles.container2}>
-              <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={handlePress} onPressOut={()=>Armazenar('11', 0.25)}>
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
                 <Text style={styles.textoCartoes}>Arquivos</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")} onPressOut={()=>Armazenar('12', 0)}>
                 <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
                 <Text style={styles.textoCartoes}>Ativide Avaliativa</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.cartoes]}>
-                <Image style={styles.iconecartoes} source={require('../images/videos.png')} />
+                <Image style={styles.iconecartoes} source={require('../images/videos.png')} onPressOut={()=>Armazenar('13', 0.25)} />
                 <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
-                <Image style={styles.iconecartoes} source={require('../images/prova.png')} />
+                <Image style={styles.iconecartoes} source={require('../images/prova.png')} onPressOut={()=>Armazenar('14', 0.25)} />
                 <Text style={styles.textoCartoes}>Aprenda Mais</Text>
               </TouchableOpacity>
                   {menuVisible && (

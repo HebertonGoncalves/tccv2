@@ -8,7 +8,7 @@ export default function TelaIntroducao({navigation}) {
     return (
       <ImageBackground source={image} style={styles.container}>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>    
-        <Text>Introducão: O Método Pa</Text>
+        <Text>Introducão</Text>
         <Button
           title="Home"
           onPress={() => navigation.navigate("home")}
