@@ -10,6 +10,7 @@ import * as Progress from 'react-native-progress';
 import ModeloAtividade from './src/components/ModeloAtividade';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Pergunta211 from './src/components/Perguntas/Pergunta211';
+import Pergunta212 from './src/components/Perguntas/Pergunta212';
 
 
 function HomeScreen({ navigation}) {
@@ -167,6 +168,7 @@ function App() {
         <Stack.Screen name="ModeloAtividade" component={ModeloAtividade} />
         <Stack.Screen name="Atividade" component={Atividade}/>
         <Stack.Screen name="Pergunta211" component={Pergunta211}/>
+        <Stack.Screen name="Pergunta212" component={Pergunta212}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

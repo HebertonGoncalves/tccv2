@@ -5,13 +5,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ModeloAtividade({navigation}) {
 
-  const [botaoDesabilitado, setBotaoDesabilitado] = useState(false);
-  const [respondida, setRespondida] = useState('');
-  const handlePress = () => {
-    setBotaoDesabilitado(false);
-    setRespondida('Respondida');
-  };
-
   const [result, setResult] = useState(null)
 
   const Buscar = async (chave) => {
@@ -23,40 +16,43 @@ export default function ModeloAtividade({navigation}) {
       console.log(e)
     }
   }
-        Buscar('1')
+        Buscar('eletq1q1')
 
     return (
             <SafeAreaView style={styles.container}>
-                <TouchableOpacity  style={styles.cartoes} onPress={handlePress} onPressIn={()=>navigation.navigate('Pergunta211')} disabled={botaoDesabilitado}>
-                    <Text style={styles.nota}>2.5</Text>
+              <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
+                <TouchableOpacity  style={styles.cartoes} onPress={()=>navigation.navigate('Pergunta211')}>
+                    <Text style={styles.nota}>{result}</Text>
                   <View style= {{flexDirection:'column'}}>
-                    <Text style={styles.titulo}>Questão 1</Text>
-                    <Text style={styles.texto}>Qual a unidade de medida da corrente ?</Text>
-                    <Text style={styles.resposta}>{respondida}</Text>
+                    <Text style={styles.titulo}>Questionário 1</Text>
+                    <Text style={styles.texto}>Capítulo I</Text>
+                    <Text style={styles.texto}>Capítulo II</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes}>
-                    <Text style={styles.nota}>2.5</Text>
+                    <Text style={styles.nota}>-</Text>
                   <View style= {{flexDirection:'column'}}>
-                    <Text style={styles.titulo}>Questão 2</Text>
-                    <Text style={styles.texto}>Qual a unidade de medida da tensão ?</Text>
+                    <Text style={styles.titulo}>Questionário 2</Text>
+                    <Text style={styles.texto}>Capítulo III</Text>
+                    <Text style={styles.texto}>Capítulo IV</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes}>
-                    <Text style={styles.nota}>2.5</Text>
+                    <Text style={styles.nota}>-</Text>
                   <View style= {{flexDirection:'column'}}>
-                    <Text style={styles.titulo}>Questão 3</Text>
-                    <Text style={styles.texto}>Qual a unidade de medida da resistencia ?</Text>
+                    <Text style={styles.titulo}>Questionário 3</Text>
+                    <Text style={styles.texto}>Capítulo V</Text>
+                    <Text style={styles.texto}>Capítulo VI</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes}>
-                    <Text style={styles.nota}>2.5</Text>
+                    <Text style={styles.nota}>-</Text>
                   <View style= {{flexDirection:'column'}}>
-                    <Text style={styles.titulo}>Questão 4</Text>
-                    <Text style={styles.texto}>Qual a unidade de medida da potencia ?</Text>
+                    <Text style={styles.titulo}>Questionário 4</Text>
+                    <Text style={styles.texto}>Capítulo VII</Text>
+                    <Text style={styles.texto}>Capítulo VIII</Text>
                   </View>
                 </TouchableOpacity>
-                <View><Text style={styles.pontos} >Pontuação: {result} pontos</Text></View>
             </SafeAreaView>
     );
 
