@@ -16,7 +16,11 @@ export default function ModeloAtividade({navigation}) {
       console.log(e)
     }
   }
-        Buscar('eletq1q1')
+        Buscar('eletq1r')
+
+        if(result==1){
+          styles.nota.backgroundColor = 'white'
+        }
 
     return (
             <SafeAreaView style={styles.container}>

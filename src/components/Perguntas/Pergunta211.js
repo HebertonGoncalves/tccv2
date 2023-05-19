@@ -1,4 +1,4 @@
-import { SafeAreaView,TouchableOpacity, ScrollView, StyleSheet, Text, View } from "react-native"
+import { SafeAreaView,TouchableOpacity, ScrollView, StyleSheet, Text, View, Alert } from "react-native"
 import * as React from 'react';
 import { RadioButton } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -27,6 +27,7 @@ export default function Pergunta211(){
       responder2();
       responder3();
       responder4();
+      Armazenar('eletq1r', 1)
   }
 
   function responder1 (){
@@ -95,7 +96,7 @@ export default function Pergunta211(){
                     <RadioButton.Item style={styles.radio} label="Permite ode desenvolvimento de software." value="43" status={ checked4 === '43' ? 'checked' : 'unchecked' } onPress={() => setChecked4('43')}/>
                     <RadioButton.Item style={styles.radio} label="Soluçãolizada no desenvolvimento de software." value="44" status={ checked4 === '44' ? 'checked' : 'unchecked' } onPress={() => setChecked4('44')}/>
               </View> 
-              <TouchableOpacity onPress={responder()} style={styles.botao}><Text>Responder</Text></TouchableOpacity>
+              <TouchableOpacity onPressOut={()=>navigation.navigate('ModeloAtividade')} onPress={responder()} style={styles.botao}><Text style={styles.txbtn}>Responder</Text></TouchableOpacity>
             </ScrollView>
         </SafeAreaView>
     )
@@ -136,14 +137,14 @@ const styles = StyleSheet.create({
       position: "relative", 
       justifyContent: "center", 
       alignItems: "center",
-      borderRadius: 1,
-      backgroundColor: "#767b91",
+      borderRadius: 20,
       borderWidth:1,
       margin:2,
       marginLeft: 8,
       fontWeight: 'bold',
       fontSize: 18,
-      marginBottom:20
+      marginBottom:20,
+      borderColor: '#00a6fb',
     },
     radio:{
       borderWidth: 1,
@@ -157,5 +158,8 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontStyle: "italic",
       height: 200,
+    },
+    txbtn:{
+      color: '#00a6fb',
     }
   });
