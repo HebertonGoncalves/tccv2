@@ -1,10 +1,12 @@
-import { SafeAreaView,TouchableOpacity, ScrollView, StyleSheet, Text, View, Alert } from "react-native"
+import { SafeAreaView,TouchableOpacity, ScrollView, StyleSheet, Text, View, ToastAndroid } from "react-native"
 import * as React from 'react';
 import { RadioButton } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Pergunta211(){
+
+  
 
   const navigation = useNavigation();
 
@@ -51,6 +53,10 @@ export default function Pergunta211(){
     }else{Armazenar('eletq1q4', 0)}
   }
 
+  const showToast = () => {
+    ToastAndroid.show('Atividade respondida !', ToastAndroid.SHORT);
+  };
+
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scrollView}>
@@ -96,7 +102,7 @@ export default function Pergunta211(){
                     <RadioButton.Item style={styles.radio} label="Permite ode desenvolvimento de software." value="43" status={ checked4 === '43' ? 'checked' : 'unchecked' } onPress={() => setChecked4('43')}/>
                     <RadioButton.Item style={styles.radio} label="Soluçãolizada no desenvolvimento de software." value="44" status={ checked4 === '44' ? 'checked' : 'unchecked' } onPress={() => setChecked4('44')}/>
               </View> 
-              <TouchableOpacity onPressOut={()=>navigation.navigate('ModeloAtividade')} onPress={responder()} style={styles.botao}><Text style={styles.txbtn}>Responder</Text></TouchableOpacity>
+              <TouchableOpacity onPressIn={()=>showToast()} onPressOut={()=>navigation.navigate('ModeloAtividade')} onPress={responder()} style={styles.botao}><Text style={styles.txbtn}>Responder</Text></TouchableOpacity>
             </ScrollView>
         </SafeAreaView>
     )

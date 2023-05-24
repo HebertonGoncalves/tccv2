@@ -6,6 +6,7 @@ import { useState } from 'react';
 import TelaIntroducao from './src/screens/TelaIntroducao';
 import ModeloConteudos from './src/components/ModeloConteudos'
 import Atividade from './src/components/Atividade';
+import Notas from './src/components/Notas';
 import * as Progress from 'react-native-progress';
 import ModeloAtividade from './src/components/ModeloAtividade';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -167,6 +168,7 @@ function App() {
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
         <Stack.Screen name="ModeloAtividade" component={ModeloAtividade} />
         <Stack.Screen name="Atividade" component={Atividade}/>
+        <Stack.Screen name="Notas" component={Notas} />
         <Stack.Screen name="Pergunta211" component={Pergunta211}/>
         <Stack.Screen name="Pergunta212" component={Pergunta212}/>
       </Stack.Navigator>
