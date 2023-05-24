@@ -5,6 +5,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ModeloAtividade({navigation}) {
 
+
+
+
   const [result, setResult] = useState(null)
 
   const Buscar = async (chave) => {
@@ -16,14 +19,21 @@ export default function ModeloAtividade({navigation}) {
       console.log(e)
     }
   }
-        Buscar('eletq1r')
 
+
+  Buscar('eletq1r')
+
+  const handlePress1 = () => {
+    if (result!=2) {
+      ()=>navigation.navigate('Pergunta211')
+    }
+  };
 
     return (
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
-                <TouchableOpacity  style={styles.cartoes} onPress={()=>navigation.navigate('Pergunta211')}>
-                    <Text style={styles.marcador}>-</Text>
+                <TouchableOpacity  style={styles.cartoes} onPress={handlePress1()}>
+                    <Text style={styles.marcador}>{result}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>

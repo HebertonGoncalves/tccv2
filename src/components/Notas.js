@@ -1,4 +1,4 @@
-import { View } from "react-native"
+import { View, StyleSheet } from "react-native"
 import * as React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

@@ -29,7 +29,7 @@ export default function Pergunta211(){
       responder2();
       responder3();
       responder4();
-      Armazenar('eletq1r', 1)
+      Armazenar('eletq1r', 0)
   }
 
   function responder1 (){
@@ -54,7 +54,7 @@ export default function Pergunta211(){
   }
 
   const showToast = () => {
-    ToastAndroid.show('Atividade respondida !', ToastAndroid.SHORT);
+    ToastAndroid.show('Atividade respondida ! Por favor aguarde feedback', ToastAndroid.SHORT);
   };
 
     return (
