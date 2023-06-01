@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, SafeAreaView, Text, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, SafeAreaView, Text, View, ToastAndroid } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function ModeloAtividade({navigation}) {
 
   
-  const [backgroundColor, setBackgroundColor] = useState('grey');
+  const showToast = () => {
+    ToastAndroid.show('Atividade já respondida !', ToastAndroid.SHORT);
+  };
+
+  const [backgroundColor, setBackgroundColor] = useState(null);
 
   const alterarCor = () => {
-    setBackgroundColor('green');
+    setBackgroundColor('grey');
+    showToast();
   };
 
   const [result, setResult] = useState(null)
@@ -41,8 +46,8 @@ export default function ModeloAtividade({navigation}) {
     return (
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
-                <TouchableOpacity  style={styles.cartoes} onPress={handlePress1()}>
-                    <Text style={[styles.marcador, {backgroundColor} ]}></Text>
+                <TouchableOpacity  style={[styles.cartoes, {backgroundColor} ]} onPress={handlePress1()}>
+                    <Text style={styles.marcador}>{'var_nota'}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
