@@ -29,7 +29,7 @@ export default function Pergunta211(){
       responder2();
       responder3();
       responder4();
-      Armazenar('eletq1r', 0)
+      Armazenar('eletq1r', 4)
   }
 
   function responder1 (){

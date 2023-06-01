@@ -5,8 +5,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ModeloAtividade({navigation}) {
 
+  
+  const [backgroundColor, setBackgroundColor] = useState('grey');
 
-
+  const alterarCor = () => {
+    setBackgroundColor('green');
+  };
 
   const [result, setResult] = useState(null)
 
@@ -23,17 +27,22 @@ export default function ModeloAtividade({navigation}) {
 
   Buscar('eletq1r')
 
-  const handlePress1 = () => {
-    if (result!=2) {
+  function handlePress1() {
+    if(result!=4){
+    return(
       ()=>navigation.navigate('Pergunta211')
-    }
+      )
+    }else{
+      return(
+      alterarCor
+    )}
   };
 
     return (
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
                 <TouchableOpacity  style={styles.cartoes} onPress={handlePress1()}>
-                    <Text style={styles.marcador}>{result}</Text>
+                    <Text style={[styles.marcador, {backgroundColor} ]}></Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
@@ -41,7 +50,7 @@ export default function ModeloAtividade({navigation}) {
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes}>
-                    <Text style={styles.marcador}>-</Text>
+                    <Text style={styles.marcador}></Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 2</Text>
                     <Text style={styles.texto}>Capítulo III</Text>
@@ -49,7 +58,7 @@ export default function ModeloAtividade({navigation}) {
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes}>
-                    <Text style={styles.marcador}>-</Text>
+                    <Text style={styles.marcador}></Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 3</Text>
                     <Text style={styles.texto}>Capítulo V</Text>
@@ -57,7 +66,7 @@ export default function ModeloAtividade({navigation}) {
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes}>
-                    <Text style={styles.marcador}>-</Text>
+                    <Text style={styles.marcador}></Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 4</Text>
                     <Text style={styles.texto}>Capítulo VII</Text>
