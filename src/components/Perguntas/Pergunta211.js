@@ -34,23 +34,23 @@ export default function Pergunta211(){
 
   function responder1 (){
     if(checked1=='11'){//onde se define a resposta correta
-      Armazenar('eletq1q1', 2.5)
-    }else{Armazenar('eletq1q1', 0)}
+      Armazenar('M1Q1P1', 2.5)
+    }else{Armazenar('M1Q1P1', 0)}
   }
   function responder2 (){
-    if(checked1=='11'){//onde se define a resposta correta
-      Armazenar('eletq1q2', 2.5)
-    }else{Armazenar('eletq1q2', 0)}
+    if(checked2=='11'){//onde se define a resposta correta
+      Armazenar('M1Q1P2', 2.5)
+    }else{Armazenar('M1Q1P2', 0)}
   }
   function responder3 (){
-    if(checked1=='11'){//onde se define a resposta correta
-      Armazenar('eletq1q3', 2.5)
-    }else{Armazenar('eletq1q3', 0)}
+    if(checked3=='11'){//onde se define a resposta correta
+      Armazenar('M1Q1P3', 2.5)
+    }else{Armazenar('M1Q1P3', 0)}
   }
   function responder4 (){
-    if(checked1=='11'){//onde se define a resposta correta
-      Armazenar('eletq1q4', 2.5)
-    }else{Armazenar('eletq1q4', 0)}
+    if(checked4=='11'){//onde se define a resposta correta
+      Armazenar('M1Q1P4', 2.5)
+    }else{Armazenar('M1Q1P4', 0)}
   }
 
   const showToast = () => {
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 18,
       marginBottom:20,
-      borderColor: '#00a6fb',
+      borderColor: '#000',
     },
     radio:{
       borderWidth: 1,
@@ -166,6 +166,6 @@ const styles = StyleSheet.create({
       height: 200,
     },
     txbtn:{
-      color: '#00a6fb',
+      color: '#000',
     }
   });

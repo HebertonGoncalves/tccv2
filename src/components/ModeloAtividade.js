@@ -29,11 +29,10 @@ export default function ModeloAtividade({navigation}) {
     }
   }
 
-
   Buscar('eletq1r')
 
   function handlePress1() {
-    if(result!=4){
+    if(result!=5){
     return(
       ()=>navigation.navigate('Pergunta211')
       )
@@ -47,7 +46,7 @@ export default function ModeloAtividade({navigation}) {
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
                 <TouchableOpacity  style={[styles.cartoes, {backgroundColor} ]} onPress={handlePress1()}>
-                    <Text style={styles.marcador}>{'var_nota'}</Text>
+                    <Text style={styles.marcador}></Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
