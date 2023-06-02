@@ -79,7 +79,7 @@ var progressoPorcent = progresso*100
         <Progress.Bar progress={prog3} width={80} height={20} color='#0353a4' marginLeft= {10} />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate("ModeloConteudos")}
+        onPress={() => navigation.navigate("Notas")}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>CLPs</Text>
         <Progress.Bar progress={prog4} width={80} height={20} color='#0353a4' marginLeft= {10} />

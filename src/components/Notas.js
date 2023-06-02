@@ -1,8 +1,10 @@
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, Text } from "react-native"
 import * as React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Notas(){
+
+  const [result, setResult] = useState(null)
 
   guarda_notas()
 
@@ -31,7 +33,7 @@ export default function Notas(){
     const Buscar = async (chave) => {
         try {
           const jsonValue = await AsyncStorage.getItem(chave)
-          var result = jsonValue != null ? JSON.parse(jsonValue) : null;
+          result = jsonValue != null ? JSON.parse(jsonValue) : null;
           setResult(result)
         } catch(e) {
           console.log(e)
@@ -39,21 +41,23 @@ export default function Notas(){
       }
 
 
-    function guarda_notas(){
+    function guarda_notas(pontos, notas){
           for (i = 0; i < 4; i++) {
             for (j = 0; j < 4; j++) {
               for (k = 0; k < 4; k++){
-                pontos[i][j][k] = Buscar(chaves[l]);
-                notas[i][j] = pontos[i][j][k]+notas[i][j];
+                pontos[i],[j],[k] = Buscar(chaves[l]);
+                notas[i],[j] += pontos[i],[j],[k];
                 l++;
-                //return?
+                return pontos, notas;
           }
       }
     }
   }
 
     return (
-        <View></View> 
+        <View>
+          <Text>{notas[0][0]}</Text>
+        </View> 
     )
 }
 
