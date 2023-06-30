@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Alert } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
 import { useState } from 'react';
 import TelaIntroducao from './src/screens/TelaIntroducao';
 import ModeloConteudos from './src/components/ModeloConteudos'
-import Atividade from './src/components/Atividade';
-import Notas from './src/components/Notas';
 import * as Progress from 'react-native-progress';
 import ModeloAtividade from './src/components/ModeloAtividade';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -79,7 +77,7 @@ var progressoPorcent = progresso*100
         <Progress.Bar progress={prog3} width={80} height={20} color='#0353a4' marginLeft= {10} />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Notas")}
+        onPress={() => navigation.navigate("ModeloConteudos")}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>CLPs</Text>
         <Progress.Bar progress={prog4} width={80} height={20} color='#0353a4' marginLeft= {10} />
@@ -167,8 +165,6 @@ function App() {
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
         <Stack.Screen name="ModeloAtividade" component={ModeloAtividade} />
-        <Stack.Screen name="Atividade" component={Atividade}/>
-        <Stack.Screen name="Notas" component={Notas} />
         <Stack.Screen name="Pergunta211" component={Pergunta211}/>
         <Stack.Screen name="Pergunta212" component={Pergunta212}/>
       </Stack.Navigator>

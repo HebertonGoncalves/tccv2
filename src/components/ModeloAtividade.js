@@ -1,52 +1,74 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, TouchableOpacity, SafeAreaView, Text, View, ToastAndroid } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function ModeloAtividade({navigation}) {
 
+  let chaves = ['M1Q1P1','M1Q1P2','M1Q1P3','M1Q1P4',
+                'M1Q2P1','M1Q2P2','M1Q2P3','M1Q2P4',
+                'M1Q3P1','M1Q3P2','M1Q3P3','M1Q3P4',
+                'M1Q4P1','M1Q4P2','M1Q4P3','M1Q4P4']
+
   
   const showToast = () => {
     ToastAndroid.show('Atividade já respondida !', ToastAndroid.SHORT);
   };
 
-  const [backgroundColor, setBackgroundColor] = useState(null);
+  const [backgroundColor, setBackgroundColor] = useState("blue");
 
-  const alterarCor = () => {
-    setBackgroundColor('grey');
-    showToast();
-  };
 
-  const [result, setResult] = useState(null)
+  const [resultNota, setResultNota] = useState()
+  const [resultAtividade, setResultAtividade] = useState()
 
-  const Buscar = async (chave) => {
+  const BuscarAtividade = async (chaveAtividade) => {
     try {
-      const jsonValue = await AsyncStorage.getItem(chave)
-      var result = jsonValue != null ? JSON.parse(jsonValue) : null;
-      setResult(result)
+      const jsonValue = await AsyncStorage.getItem(chaveAtividade)
+      var resultAtividade = jsonValue != null ? JSON.parse(jsonValue) : null;
+      setResultAtividade(resultAtividade)
+    } catch(e) {
+      console.log(e)
+    }
+  }
+  const BuscarNota = async (chaveNota) => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(chaveNota)
+      var resultNota = jsonValue != null ? JSON.parse(jsonValue) : null;
+      setResultNota(resultNota)
     } catch(e) {
       console.log(e)
     }
   }
 
-  Buscar('eletq1r')
+  let nota1
+  let nota2
+  let nota3
+  let nota4
+  let notafinal1
+
+  function somaNotas1(){
+    BuscarNota(chaves[0])
+    nota1 = resultNota
+    BuscarNota(chaves[1])
+    nota2 = resultNota
+    BuscarNota(chaves[2])
+    nota3 = resultNota
+    BuscarNota(chaves[3])
+    nota4 = resultNota
+    notafinal1 = nota1+nota2+nota3+nota4
+    return notafinal1
+  };
 
   function handlePress1() {
-    if(result!=5){
-    return(
-      ()=>navigation.navigate('Pergunta211')
-      )
-    }else{
-      return(
-      alterarCor
-    )}
+    
   };
+
 
     return (
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
-                <TouchableOpacity  style={[styles.cartoes, {backgroundColor} ]} onPress={handlePress1()}>
-                    <Text style={styles.marcador}></Text>
+                <TouchableOpacity  style={styles.cartoes} onPress={handlePress1()}>
+                    <Text onPress={somaNotas1()} style={[styles.marcador, {backgroundColor}]}>{notafinal1}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
