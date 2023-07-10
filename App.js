@@ -9,7 +9,7 @@ import * as Progress from 'react-native-progress';
 import ModeloAtividade from './src/components/ModeloAtividade';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Pergunta211 from './src/components/Perguntas/Pergunta211';
-import Pergunta212 from './src/components/Perguntas/Pergunta212';
+import Notas from './src/components/Notas';
 
 
 function HomeScreen({ navigation}) {
@@ -77,7 +77,7 @@ var progressoPorcent = progresso*100
         <Progress.Bar progress={prog3} width={80} height={20} color='#0353a4' marginLeft= {10} />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate("ModeloConteudos")}
+        onPress={() => navigation.navigate("Notas")}
         style={styles.cartoes}>
         <Text style={styles.textoCartoes}>CLPs</Text>
         <Progress.Bar progress={prog4} width={80} height={20} color='#0353a4' marginLeft= {10} />
@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
   textoCartoes: { 
     fontSize: 20, 
     color: '#fff',
+    marginBottom: 5
   },
 });
 
@@ -160,13 +161,13 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Automação" component={HomeScreen} />
+        <Stack.Screen name="Aprenda Automação" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />
         <Stack.Screen name="ModeloAtividade" component={ModeloAtividade} />
         <Stack.Screen name="Pergunta211" component={Pergunta211}/>
-        <Stack.Screen name="Pergunta212" component={Pergunta212}/>
+        <Stack.Screen name="Notas" component={Notas}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
