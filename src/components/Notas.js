@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import {SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react';
 
@@ -24,20 +24,37 @@ export default function Notas(){
         }
       }
 
-    const somaNotas = () => {
-        BuscarNota(chaves[0])
+   function somaNotas() {
+        BuscarNota('M1Q1P1')
         let nota1 = resultNota
-        BuscarNota(chaves[0])
-        let nota2 = resultNota
-        BuscarNota(chaves[0])
-        let nota3 = resultNota
-        let soma = nota1+nota2+nota3
-        return soma
+        return nota1
     }
       
     return(
         <SafeAreaView>
-            <Text>Nota:{somaNotas()}</Text>
+            <View style={styles.container}>
+                <Text>Lembre o objetivo não é a pontuação e sim o aprendizado, refaça os testes até ficar com 10 em tudo !</Text>
+                <Text style={styles.titulos}>Eletricidade</Text>
+                <Text style={styles.subtitulos}>Capitulos I e II: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos III e IV: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos V e VI: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos VII e VIII: {somaNotas()}</Text>
+                <Text style={styles.titulos}>Eletrônica</Text>
+                <Text style={styles.subtitulos}>Capitulos I e II: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos III e IV: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos V e VI: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos VII e VIII: {somaNotas()}</Text>
+                <Text style={styles.titulos}>Pneumática</Text>
+                <Text style={styles.subtitulos}>Capitulos I e II: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos III e IV: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos V e VI: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos VII e VIII: {somaNotas()}</Text>
+                <Text style={styles.titulos}>CLPs</Text>
+                <Text style={styles.subtitulos}>Capitulos I e II: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos III e IV: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos V e VI: {somaNotas()}</Text>
+                <Text style={styles.subtitulos}>Capitulos VII e VIII: {somaNotas()}</Text>
+            </View>
         </SafeAreaView>
     )
 }
@@ -47,5 +64,27 @@ export default function Notas(){
 
 
 const styles = StyleSheet.create({
-   
+  container: {
+        alignItems: 'center',
+        position: 'relative',
+        
+  },
+  titulos: {
+        color: 'white',
+        backgroundColor: '#012a4a',
+        fontSize: 20,
+        fontWeight: 'bold',
+        borderWidth: 2,
+        paddingLeft: 10,
+        marginTop: 10,
+        width: 400,
+  },
+  subtitulos: {
+        color: 'white',
+        backgroundColor: '#012a4a',
+        fontSize: 15,
+        borderWidth: 2,
+        paddingLeft: 25,
+        width: 400,
+  } 
 })

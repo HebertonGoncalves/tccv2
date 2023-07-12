@@ -5,9 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Pergunta211(){
-
   
-
   const navigation = useNavigation();
 
   const [checked1, setChecked1] = React.useState();
@@ -24,34 +22,41 @@ export default function Pergunta211(){
     }
   }
 
-  function responder (){
-      responder1();
-      responder2();
-      responder3();
-      responder4();
-      Armazenar('eletq1r', 5)
+  function responder() {
+    const nota = somaRespostas();
+    Armazenar('M1Q1P1', nota);
   }
-
-  function responder1 (){
-    if(checked1=='11'){//onde se define a resposta correta
-      Armazenar('M1Q1P1', 2.5)
-    }else{Armazenar('M1Q1P1', 0)}
+  
+  function somaRespostas() {
+    let nota = 0;
+  
+    if (checked1 === '11') {
+      nota += 2.5;
+    } else {
+      nota += 0;
+    }
+  
+    if (checked2 === '21') {
+      nota += 2.5;
+    } else {
+      nota += 0;
+    }
+  
+    if (checked3 === '31') {
+      nota += 2.5;
+    } else {
+      nota += 0;
+    }
+  
+    if (checked4 === '41') {
+      nota += 2.5;
+    } else {
+      nota += 0;
+    }
+  
+    return nota;
   }
-  function responder2 (){
-    if(checked2=='11'){//onde se define a resposta correta
-      Armazenar('M1Q1P2', 2.5)
-    }else{Armazenar('M1Q1P2', 0)}
-  }
-  function responder3 (){
-    if(checked3=='11'){//onde se define a resposta correta
-      Armazenar('M1Q1P3', 2.5)
-    }else{Armazenar('M1Q1P3', 0)}
-  }
-  function responder4 (){
-    if(checked4=='11'){//onde se define a resposta correta
-      Armazenar('M1Q1P4', 2.5)
-    }else{Armazenar('M1Q1P4', 0)}
-  }
+  
 
   const showToast = () => {
     ToastAndroid.show('Atividade respondida ! Por favor aguarde feedback', ToastAndroid.SHORT);
@@ -102,7 +107,7 @@ export default function Pergunta211(){
                     <RadioButton.Item style={styles.radio} label="Permite ode desenvolvimento de software." value="43" status={ checked4 === '43' ? 'checked' : 'unchecked' } onPress={() => setChecked4('43')}/>
                     <RadioButton.Item style={styles.radio} label="Soluçãolizada no desenvolvimento de software." value="44" status={ checked4 === '44' ? 'checked' : 'unchecked' } onPress={() => setChecked4('44')}/>
               </View> 
-              <TouchableOpacity onPressIn={()=>showToast()} onPressOut={()=>navigation.navigate('ModeloAtividade')} onPress={responder()} style={styles.botao}><Text style={styles.txbtn}>Responder</Text></TouchableOpacity>
+              <TouchableOpacity onPressIn={()=>showToast()} onPressOut={()=>navigation.navigate('ModeloAtividade')} onPress={()=>responder()} style={styles.botao}><Text style={styles.txbtn}>Responder</Text></TouchableOpacity>
             </ScrollView>
         </SafeAreaView>
     )

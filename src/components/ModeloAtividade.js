@@ -40,29 +40,9 @@ export default function ModeloAtividade({navigation}) {
     }
   }
 
-  let nota1
-  let nota2
-  let nota3
-  let nota4
-  let notafinal1
-
-  function somaNotas1(){
-    BuscarNota(chaves[0])
-    nota1 = resultNota
-    BuscarNota(chaves[1])
-    nota2 = resultNota
-    BuscarNota(chaves[2])
-    nota3 = resultNota
-    BuscarNota(chaves[3])
-    nota4 = resultNota
-    notafinal1 = nota1+nota2+nota3+nota4
-    return notafinal1
-  };
-
-  
 
   function handlePress1() {
-    somaNotas1()
+ 
   };
 
 
@@ -70,7 +50,7 @@ export default function ModeloAtividade({navigation}) {
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
                 <TouchableOpacity  style={styles.cartoes} onPress={() => navigation.navigate("Pergunta211")}>
-                    <Text onPress={handlePress1()} style={[styles.marcador, {backgroundColor}]}>{notafinal1}</Text>
+                    <Text onPress={handlePress1()} style={[styles.marcador, {backgroundColor}]}></Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
