@@ -161,7 +161,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Aprenda Automação" component={HomeScreen} />
+        <Stack.Screen name="Aprenda Automação Industrial" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="TelaIntroducao" component={TelaIntroducao} />   
         <Stack.Screen name="ModeloConteudos" component={ModeloConteudos} />

@@ -40,17 +40,19 @@ export default function ModeloAtividade({navigation}) {
     }
   }
 
-
-  function handlePress1() {
- 
-  };
+  function somaNotas() {
+    BuscarNota('M1Q1P1')
+    let nota1 = resultNota
+    return nota1
+}
+  
 
 
     return (
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
                 <TouchableOpacity  style={styles.cartoes} onPress={() => navigation.navigate("Pergunta211")}>
-                    <Text onPress={handlePress1()} style={[styles.marcador, {backgroundColor}]}></Text>
+                    <Text style={[styles.marcador, {backgroundColor}]}>{somaNotas()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
