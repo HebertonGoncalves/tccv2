@@ -1,30 +1,76 @@
 import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight, Linking } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CLPs({navigation}) {
 
-    const Armazenar = async (chave, valor) => {
-      try {
-        const jsonValue = JSON.stringify(valor)
-        await AsyncStorage.setItem(chave, jsonValue)
-      } catch (e) {
-        console.log(e)
-      }
-    }
+  const [menuVisiblePdf, setMenuVisiblePdf] = useState(false);
+  const [menuVisibleVideo, setMenuVisibleVideo] = useState(false);
+  const [menuVisibleMore, setMenuVisibleMore] = useState(false);
 
-  const [menuVisible, setMenuVisible] = useState(false);
-
-  const handlePress = () => {
-    setMenuVisible(true);
+  const handlePressPdf = () => {
+    setMenuVisiblePdf(true);
   };
 
-  const handleClose = () => {
-    setMenuVisible(false);
+  const handleClosePdf = () => {
+    setMenuVisiblePdf(false);
+  };
+  
+  const handlePressVideo = () => {
+    setMenuVisibleVideo(true);
   };
 
-  const handleOpenPdf = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); // cap 1 eletricidade ou video
+  const handleCloseVideo = () => {
+    setMenuVisibleVideo(false);
+  };
+  
+  const handlePressMore = () => {
+    setMenuVisibleMore(true);
+  };
+
+  const handleCloseMore = () => {
+    setMenuVisibleMore(false);
+  };
+
+
+  const handleOpenPdf1 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 1
+  };
+  const handleOpenPdf2 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 2
+  };
+  const handleOpenPdf3 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 3
+  };
+  const handleOpenPdf4 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 4
+  };
+
+
+  const handleOpenVideo1 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 1
+  };
+  const handleOpenVideo2 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 2
+  };
+  const handleOpenVideo3 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 3
+  };
+  const handleOpenVideo4 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 4
+  };
+
+
+  const handleOpenMore1 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+  };
+  const handleOpenMore2 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+  };
+  const handleOpenMore3 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+  };
+  const handleOpenMore4 = () => {
+    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
   };
 
 
@@ -34,36 +80,72 @@ export default function CLPs({navigation}) {
             <Text style={styles.titulo} >CLPs</Text>
             <Text style={styles.titulo}>Os Controladores Lógicos Programáveis (CLPs) são componentes de extrema importância para a automação industrial, desempenhando um papel fundamental no controle e gerenciamento dos processos produtivos.</Text>
             <SafeAreaView style={styles.container2}>
-              <TouchableOpacity style={[styles.cartoes]} onPress={handlePress} onPressOut={()=>Armazenar('M1P1', 0.25)}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={handlePressPdf}>
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
                 <Text style={styles.textoCartoes}>Arquivos</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")} onPressOut={()=>Armazenar('M1P2', 0)}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")}>
                 <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
                 <Text style={styles.textoCartoes}>Ativide Avaliativa</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]}>
-                <Image style={styles.iconecartoes} source={require('../images/videos.png')} onPressOut={()=>Armazenar('M1P3', 0.25)} />
+              <TouchableOpacity style={[styles.cartoes]} onPress={handlePressVideo}>
+                <Image style={styles.iconecartoes} source={require('../images/videos.png')}/>
                 <Text style={styles.textoCartoes}>Aulas Conceituais</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]} onPress={handlePress}>
-                <Image style={styles.iconecartoes} source={require('../images/prova.png')} onPressOut={()=>Armazenar('M1P4', 0.25)} />
+              <TouchableOpacity style={[styles.cartoes]} onPress={handlePressMore}>
+                <Image style={styles.iconecartoes} source={require('../images/prova.png')}/>
                 <Text style={styles.textoCartoes}>Aprenda Mais</Text>
               </TouchableOpacity>
-                  {menuVisible && (
-                    <TouchableHighlight style={styles.menu} onPress={handleClose}>
+                  {menuVisiblePdf && (
+                    <TouchableHighlight style={styles.menu} onPress={handleClosePdf}>
                       <View >
-                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf}>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf1}>
                           <Text style={styles.textominicartao}>Cap. I: Introdução à Eletricidade: Conceitos Fundamentais e Princípios Básicos</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf2}>
                           <Text style={styles.textominicartao}>Cap. II: Circuitos Elétricos: Leis de Ohm, Kirchhoff e Circuitos RL, RC e RLC</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf3}>
                           <Text style={styles.textominicartao}>Cap. III: Fontes de Energia Elétrica: Geradores, Baterias e Fontes Alternativas</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.minicartao} onPress={handleClose}>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf4}>
                           <Text style={styles.textominicartao}>Cap. IV: Dispositivos Eletrônicos: Diodos, Transistores e Circuitos Integrados</Text>
+                        </TouchableOpacity>
+                       </View>
+                      </TouchableHighlight>
+                      )}
+                  {menuVisibleVideo && (
+                    <TouchableHighlight style={styles.menu} onPress={handleCloseVideo}>
+                      <View >
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo1}>
+                          <Text style={styles.textominicartao}>Aula 1</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo2}>
+                          <Text style={styles.textominicartao}>Aula 2</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo3}>
+                          <Text style={styles.textominicartao}>Aula 3</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo4}>
+                          <Text style={styles.textominicartao}>Aula 4</Text>
+                        </TouchableOpacity>
+                       </View>
+                      </TouchableHighlight>
+                      )}
+                  {menuVisibleMore && (
+                    <TouchableHighlight style={styles.menu} onPress={handleCloseMore}>
+                      <View >
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore1}>
+                          <Text style={styles.textominicartao}>Site 1</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore2}>
+                          <Text style={styles.textominicartao}>Site 2</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore3}>
+                          <Text style={styles.textominicartao}>Site 3</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore4}>
+                          <Text style={styles.textominicartao}>Site 4</Text>
                         </TouchableOpacity>
                        </View>
                       </TouchableHighlight>

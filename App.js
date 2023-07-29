@@ -9,6 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Pergunta211 from './src/components/Perguntas/Pergunta211';
 import Notas from './src/components/Notas';
 import Eletricidade from './src/screens/Eletricidade';
+import AtvEletricidade from './src/screens/AtvEletricidade';
 import Eletronica from './src/screens/Eletronica';
 import CLPs from './src/screens/CLPs';
 import Pneumatica from './src/screens/Pneumatica';
@@ -136,6 +137,7 @@ function App() {
         <Stack.Screen name="Pergunta211" component={Pergunta211}/>
         <Stack.Screen name="Notas" component={Notas}/>
         <Stack.Screen name="Eletricidade" component={Eletricidade} />
+        <Stack.Screen name="AtvEletricidade" component={AtvEletricidade} />
         <Stack.Screen name="Eletronica" component={Eletronica} />
         <Stack.Screen name="CLPs" component={CLPs} />
         <Stack.Screen name="Pneumatica" component={Pneumatica} />

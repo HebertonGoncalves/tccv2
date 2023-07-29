@@ -84,7 +84,7 @@ export default function Eletricidade({navigation}) {
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
                 <Text style={styles.textoCartoes}>Arquivos</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("ModeloAtividade")}>
+              <TouchableOpacity style={[styles.cartoes]} onPress={() => navigation.navigate("atvEletricidade")}>
                 <Image style={styles.iconecartoes} source={require('../images/atividades.png')} />
                 <Text style={styles.textoCartoes}>Ativide Avaliativa</Text>
               </TouchableOpacity>
