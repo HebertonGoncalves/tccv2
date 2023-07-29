@@ -1,16 +1,11 @@
-let chaves = ['M1Q1P1','M1Q1P2','M1Q1P3','M1Q1P4',
-                'M1Q2P1','M1Q2P2','M1Q2P3','M1Q2P4',
-                'M1Q3P1','M1Q3P2','M1Q3P3','M1Q3P4',
-                'M1Q4P1','M1Q4P2','M1Q4P3','M1Q4P4',
-                'M2Q1P1','M2Q1P2','M2Q1P3','M2Q1P4',
-                'M2Q2P1','M2Q2P2','M2Q2P3','M2Q2P4',
-                'M2Q3P1','M2Q3P2','M2Q3P3','M2Q3P4',
-                'M2Q4P1','M2Q4P2','M2Q4P3','M2Q4P4',
-                'M3Q1P1','M3Q1P2','M3Q1P3','M3Q1P4',
-                'M3Q2P1','M3Q2P2','M3Q2P3','M3Q2P4',
-                'M3Q3P1','M3Q3P2','M3Q3P3','M3Q3P4',
-                'M3Q4P1','M3Q4P2','M3Q4P3','M3Q4P4',
-                'M4Q1P1','M4Q1P2','M4Q1P3','M4Q1P4',
-                'M4Q2P1','M4Q2P2','M4Q2P3','M4Q2P4',
-                'M4Q3P1','M4Q3P2','M4Q3P3','M4Q3P4',
-                'M4Q4P1','M4Q4P2','M4Q4P3','M4Q4P4',]
+chaves das respostas = ['M1Q1','M1Q2','M1Q3','M1Q4',
+                        'M2Q1','M2Q2','M2Q3','M2Q4',
+                        'M3Q1','M3Q2','M3Q3','M3Q4', 
+                        'M4Q1','M4Q2','M4Q3','M4Q4',]
+
+Chaves dos progressos = [
+                        'M1P1','M1P2','M1P3','M1P4',
+                        'M2P1','M2P2','M2P3','M2P4',
+                        'M3P1','M3P2','M3P3','M3P4', 
+                        'M4P1','M4P2','M4P3','M4P4',
+]

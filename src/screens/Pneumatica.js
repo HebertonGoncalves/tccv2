@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, SafeAreaView, Text, Image, View, TouchableHighlight, Linking } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function ModeloConteudos({navigation}) {
+export default function Pneumatica({navigation}) {
 
     const Armazenar = async (chave, valor) => {
       try {
@@ -31,8 +31,8 @@ export default function ModeloConteudos({navigation}) {
     return (
       
           <SafeAreaView style={styles.container}>
-            <Text style={styles.titulo} >Eletricidade</Text>
-            <Text style={styles.titulo}>A eletricidade é a principal forma de energia usada para o funcionamento dos componentes da automação industrial.</Text>
+            <Text style={styles.titulo} >Pneumatica</Text>
+            <Text style={styles.titulo}>A pneumática desempenha um papel essencial na automação industrial, oferecendo uma alternativa eficiente e versátil para controlar e movimentar equipamentos e processos nas linhas de produção.</Text>
             <SafeAreaView style={styles.container2}>
               <TouchableOpacity style={[styles.cartoes]} onPress={handlePress} onPressOut={()=>Armazenar('M1P1', 0.25)}>
                 <Image style={styles.iconecartoes} source={require('../images/arquivos.png')} />
