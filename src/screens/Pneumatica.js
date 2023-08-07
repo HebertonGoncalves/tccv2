@@ -47,7 +47,7 @@ export default function Pneumatica({navigation}) {
 
 
   const handleOpenVideo1 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 1
+    Linking.openURL('https://youtu.be/GNXG-JYgnp0'); //video 1
   };
   const handleOpenVideo2 = () => {
     Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 2
