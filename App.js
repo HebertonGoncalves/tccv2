@@ -6,7 +6,10 @@ import { useState } from 'react';
 import * as Progress from 'react-native-progress';
 import ModeloAtividade from './src/components/ModeloAtividade';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Pergunta211 from './src/components/Perguntas/Pergunta211';
+import Perguntas11 from './src/components/Perguntas/Perguntas11';
+import Perguntas12 from './src/components/Perguntas/Perguntas12';
+import Perguntas13 from './src/components/Perguntas/Perguntas13';
+import Perguntas14 from './src/components/Perguntas/Perguntas14';
 import Notas from './src/components/Notas';
 import Eletricidade from './src/screens/Eletricidade';
 import AtvEletricidade from './src/screens/AtvEletricidade';
@@ -14,10 +17,18 @@ import Eletronica from './src/screens/Eletronica';
 import CLPs from './src/screens/CLPs';
 import Pneumatica from './src/screens/Pneumatica';
 
+
 function HomeScreen({ navigation}) {
 
-    const [prog, setProg] = useState(null)
 
+    let incremento
+    let chaves = ['M1Q1', 'M1Q2', 'M1Q3', 'M1Q4',
+                  'M2Q1', 'M2Q2', 'M2Q3', 'M2Q4',
+                  'M3Q1', 'M3Q2', 'M3Q3', 'M3Q4',
+                  'M4Q1', 'M4Q2', 'M4Q3', 'M4Q4',];
+
+    const [prog, setProg] = useState(null)
+   
 
     const Buscar = async (chave) => {
       try {
@@ -32,7 +43,7 @@ function HomeScreen({ navigation}) {
   return (
     <SafeAreaView style={styles.container1}>
       <Text style={styles.bemvindo}>Bem vindo!</Text>
-      <Text style={styles.progresso}>Progresso: {prog}%</Text>
+      <Text style={styles.progresso}>Progresso: %</Text>
       <Progress.Bar progress={prog} width={200} height={20} color='#0353a4' marginLeft= {10} />
       
       <SafeAreaView style={styles.container2}>
@@ -134,10 +145,13 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Aprenda Automação Industrial" component={HomeScreen} />
         <Stack.Screen name="ModeloAtividade" component={ModeloAtividade} />
-        <Stack.Screen name="Pergunta211" component={Pergunta211}/>
+        <Stack.Screen name="Atividade 1 - Eletricidade" component={Perguntas11}/>
+        <Stack.Screen name="Atividade 2 - Eletricidade" component={Perguntas12}/>
+        <Stack.Screen name="Atividade 3 - Eletricidade" component={Perguntas13}/>
+        <Stack.Screen name="Atividade 4 - Eletricidade" component={Perguntas14}/>
         <Stack.Screen name="Notas" component={Notas}/>
         <Stack.Screen name="Eletricidade" component={Eletricidade} />
-        <Stack.Screen name="AtvEletricidade" component={AtvEletricidade} />
+        <Stack.Screen name="Atividades de Eletricidade" component={AtvEletricidade} />
         <Stack.Screen name="Eletronica" component={Eletronica} />
         <Stack.Screen name="CLPs" component={CLPs} />
         <Stack.Screen name="Pneumatica" component={Pneumatica} />
