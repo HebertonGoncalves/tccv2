@@ -36,19 +36,19 @@ export default function Perguntas13(){
       nota += 0;
     }
   
-    if (checked2 === '21') {
+    if (checked2 === '23') {
       nota += 2.5;
     } else {
       nota += 0;
     }
   
-    if (checked3 === '32') {
+    if (checked3 === '31') {
       nota += 2.5;
     } else {
       nota += 0;
     }
   
-    if (checked4 === '41') {
+    if (checked4 === '43') {
       nota += 2.5;
     } else {
       nota += 0;
@@ -67,35 +67,35 @@ export default function Perguntas13(){
             <ScrollView style={styles.scrollView}>
               <View style={styles.View}>
                 <Text style={styles.titulo}>Questão 1</Text>
-                <Text style={styles.texto}>Em um circuito em série com três resistores de 10Ω cada, a resistência total será:</Text>
-                <RadioButton.Item style={styles.radio} label="3Ω" value="11" status={ checked1 === '11' ? 'checked' : 'unchecked' } onPress={() => setChecked1('11')}/>
-                <RadioButton.Item style={styles.radio} label="10Ω" value="12" status={ checked1 === '12' ? 'checked' : 'unchecked' } onPress={() => setChecked1('12')}/>
-                <RadioButton.Item style={styles.radio} label="20Ω" value="13" status={ checked1 === '13' ? 'checked' : 'unchecked' } onPress={() => setChecked1('13')}/>
-                <RadioButton.Item style={styles.radio} label="30Ω" value="14" status={ checked1 === '14' ? 'checked' : 'unchecked' } onPress={() => setChecked1('14')}/>
+                <Text style={styles.texto}>Qual das seguintes afirmações é verdadeira sobre capacitores ?</Text>
+                <RadioButton.Item style={styles.radio} label="Capacitores são dispositivos eletrônicos usados para amplificar sinais elétricos." value="11" status={ checked1 === '11' ? 'checked' : 'unchecked' } onPress={() => setChecked1('11')}/>
+                <RadioButton.Item style={styles.radio} label="Capacitores armazenam energia em um campo magnético." value="12" status={ checked1 === '12' ? 'checked' : 'unchecked' } onPress={() => setChecked1('12')}/>
+                <RadioButton.Item style={styles.radio} label="A unidade de capacitância é o Hertz (Hz)." value="13" status={ checked1 === '13' ? 'checked' : 'unchecked' } onPress={() => setChecked1('13')}/>
+                <RadioButton.Item style={styles.radio} label="Capacitores são usados para armazenar energia elétrica em um campo elétrico." value="14" status={ checked1 === '14' ? 'checked' : 'unchecked' } onPress={() => setChecked1('14')}/>
               </View>
               <View style={styles.View}>
                     <Text style={styles.titulo}>Questão 2</Text>
-                    <Text style={styles.texto}>Em um circuito em paralelo com três resistores de 5Ω cada, a resistência total será:</Text>
-                    <RadioButton.Item style={styles.radio} label="1.67Ω" value="21" status={ checked2 === '21' ? 'checked' : 'unchecked' } onPress={() => setChecked2('21')}/>
-                    <RadioButton.Item style={styles.radio} label="5Ω" value="22" status={ checked2 === '22' ? 'checked' : 'unchecked' } onPress={() => setChecked2('22')}/>
-                    <RadioButton.Item style={styles.radio} label="15Ω" value="23" status={ checked2 === '23' ? 'checked' : 'unchecked' } onPress={() => setChecked2('23')}/>
-                    <RadioButton.Item style={styles.radio} label="0.83Ω" value="24" status={ checked2 === '24' ? 'checked' : 'unchecked' } onPress={() => setChecked2('24')}/>
+                    <Text style={styles.texto}>O que são indutores em eletrônica ?</Text>
+                    <RadioButton.Item style={styles.radio} label="Componentes eletrônicos usados para bloquear o fluxo de corrente em um circuito." value="21" status={ checked2 === '21' ? 'checked' : 'unchecked' } onPress={() => setChecked2('21')}/>
+                    <RadioButton.Item style={styles.radio} label="Dispositivos usados para converter corrente contínua em corrente alternada." value="22" status={ checked2 === '22' ? 'checked' : 'unchecked' } onPress={() => setChecked2('22')}/>
+                    <RadioButton.Item style={styles.radio} label="Bobinas de fio usadas para armazenar energia em um campo magnético." value="23" status={ checked2 === '23' ? 'checked' : 'unchecked' } onPress={() => setChecked2('23')}/>
+                    <RadioButton.Item style={styles.radio} label="Componentes que armazenam energia elétrica em um campo elétrico." value="24" status={ checked2 === '24' ? 'checked' : 'unchecked' } onPress={() => setChecked2('24')}/>
                   </View> 
               <View style={styles.View}>
                     <Text style={styles.titulo}>Questão 3</Text>
-                    <Text style={styles.texto}>Um circuito contém uma combinação de resistores em série e em paralelo. Se dois resistores de 8Ω estão em série com um terceiro resistor de 4Ω em paralelo com a combinação, qual é a resistência total do circuito?</Text>
-                    <RadioButton.Item style={styles.radio} label="5Ω" value="31" status={ checked3 === '31' ? 'checked' : 'unchecked' } onPress={() => setChecked3('31')}/>
-                    <RadioButton.Item style={styles.radio} label="3.2Ω" value="32" status={ checked3 === '32' ? 'checked' : 'unchecked' } onPress={() => setChecked3('32')}/>
-                    <RadioButton.Item style={styles.radio} label="4.6Ω" value="33" status={ checked3 === '33' ? 'checked' : 'unchecked' } onPress={() => setChecked3('33')}/>
-                    <RadioButton.Item style={styles.radio} label="1.2Ω" value="34" status={ checked3 === '34' ? 'checked' : 'unchecked' } onPress={() => setChecked3('34')}/>
+                    <Text style={styles.texto}>Qual é a principal função de um diodo em um circuito eletrônico?</Text>
+                    <RadioButton.Item style={styles.radio} label="Permitir a passagem de corrente em uma direção específica e bloquear em outra." value="31" status={ checked3 === '31' ? 'checked' : 'unchecked' } onPress={() => setChecked3('31')}/>
+                    <RadioButton.Item style={styles.radio} label="Regular a tensão elétrica em um circuito." value="32" status={ checked3 === '32' ? 'checked' : 'unchecked' } onPress={() => setChecked3('32')}/>
+                    <RadioButton.Item style={styles.radio} label="Armazenar energia elétrica temporariamente." value="33" status={ checked3 === '33' ? 'checked' : 'unchecked' } onPress={() => setChecked3('33')}/>
+                    <RadioButton.Item style={styles.radio} label="Amplificar o sinal de entrada." value="34" status={ checked3 === '34' ? 'checked' : 'unchecked' } onPress={() => setChecked3('34')}/>
               </View> 
               <View style={styles.View}>
                     <Text style={styles.titulo}>Questão 4</Text>
-                    <Text style={styles.texto}>De acordo com a Lei de Kirchhoff das correntes, a soma das correntes em um nó, ponto de junção, em um circuito elétrico é:</Text>
-                    <RadioButton.Item style={styles.radio} label="Zero" value="41" status={ checked4 === '41' ? 'checked' : 'unchecked' } onPress={() => setChecked4('41')}/>
-                    <RadioButton.Item style={styles.radio} label="O produto das resistências em série" value="42" status={ checked4 === '42' ? 'checked' : 'unchecked' } onPress={() => setChecked4('42')}/>
-                    <RadioButton.Item style={styles.radio} label="O mesmo que a resistência total do circuito" value="43" status={ checked4 === '43' ? 'checked' : 'unchecked' } onPress={() => setChecked4('43')}/>
-                    <RadioButton.Item style={styles.radio} label="O mesmo que a tensão total aplicada ao circuito" value="44" status={ checked4 === '44' ? 'checked' : 'unchecked' } onPress={() => setChecked4('44')}/>
+                    <Text style={styles.texto}>Qual é a função básica de um transistor?</Text>
+                    <RadioButton.Item style={styles.radio} label="Converter corrente contínua em corrente alternada." value="41" status={ checked4 === '41' ? 'checked' : 'unchecked' } onPress={() => setChecked4('41')}/>
+                    <RadioButton.Item style={styles.radio} label="Armazenar energia elétrica." value="42" status={ checked4 === '42' ? 'checked' : 'unchecked' } onPress={() => setChecked4('42')}/>
+                    <RadioButton.Item style={styles.radio} label="Amplificar ou regular sinais elétricos." value="43" status={ checked4 === '43' ? 'checked' : 'unchecked' } onPress={() => setChecked4('43')}/>
+                    <RadioButton.Item style={styles.radio} label="Bloquear o fluxo de corrente elétrica em um circuito." value="44" status={ checked4 === '44' ? 'checked' : 'unchecked' } onPress={() => setChecked4('44')}/>
               </View> 
               <TouchableOpacity onPressIn={()=>showToast()} onPressOut={()=>navigation.navigate('Eletricidade')} onPress={()=>responder()} style={styles.botao}><Text style={styles.txbtn}>Responder</Text></TouchableOpacity>
             </ScrollView>
