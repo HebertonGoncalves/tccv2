@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity, SafeAreaView, Text, View, ToastAndroid } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function AtvEletricidade({navigation}) {
+export default function AtvEletronica({navigation}) {
 
   let nota1, nota2, nota3, nota4;
 
@@ -49,23 +49,23 @@ export default function AtvEletricidade({navigation}) {
   }
 
   function somaNotas1() {
-    BuscarNota1('M1Q1')
-   nota1 = resultNota1
+    BuscarNota1('M2Q1')
+     nota1 = resultNota1
     return nota1
 }
 function somaNotas2() {
-    BuscarNota2('M1Q2')
-   nota2 = resultNota2
+    BuscarNota2('M2Q2')
+     nota2 = resultNota2
     return nota2
 }
 function somaNotas3() {
-    BuscarNota3('M1Q3')
-   nota3 = resultNota3
+    BuscarNota3('M2Q3')
+     nota3 = resultNota3
     return nota3
 }
 function somaNotas4() {
-    BuscarNota4('M1Q4')
-   nota4 = resultNota4
+    BuscarNota4('M2Q4')
+     nota4 = resultNota4
     return nota4
 }
 
@@ -77,18 +77,17 @@ const Armazenar = async (chave, valor) => {
     console.log(e)
   }
 }
-
 function somaNotasTotal(){
   let total = (somaNotas1()+somaNotas2()+somaNotas3()+somaNotas4())/40;
-  Armazenar('M1P', total)
+  Armazenar('M2P', total)
 }
 
 somaNotasTotal()
-
+  
     return (
             <SafeAreaView style={styles.container}>
               <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
-                <TouchableOpacity  style={styles.cartoes} onPress={() => navigation.navigate("Atividade 1 - Eletricidade")}>
+                <TouchableOpacity  style={styles.cartoes} onPress={() => navigation.navigate("Atividade 1 - Eletronica")}>
                     <Text style={[styles.marcador]}>{somaNotas1()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
@@ -96,7 +95,7 @@ somaNotasTotal()
                     <Text style={styles.texto}>Capítulo II</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 2 - Eletricidade")}>
+                <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 2 - Eletronica")}>
                     <Text style={styles.marcador}>{somaNotas2()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 2</Text>
@@ -104,7 +103,7 @@ somaNotasTotal()
                     <Text style={styles.texto}>Capítulo IV</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 3 - Eletricidade")}>
+                <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 3 - Eletronica")}>
                     <Text style={styles.marcador}>{somaNotas3()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 3</Text>
@@ -112,7 +111,7 @@ somaNotasTotal()
                     <Text style={styles.texto}>Capítulo VI</Text>
                   </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 4 - Eletricidade")}>
+                <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 4 - Eletronica")}>
                     <Text style={styles.marcador}>{somaNotas4()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 4</Text>

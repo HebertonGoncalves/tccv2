@@ -30,7 +30,7 @@ export default function Perguntas44(){
   function somaRespostas() {
     let nota = 0;
   
-    if (checked1 === '13') {
+    if (checked1 === '14') {
       nota += 2.5;
     } else {
       nota += 0;
@@ -70,8 +70,8 @@ export default function Perguntas44(){
                 <Text style={styles.texto}>O que é um protocolo de comunicação comummente usado em redes industriais para a comunicação entre CLPs?</Text>
                 <RadioButton.Item style={styles.radio} label="TCP/IP" value="11" status={ checked1 === '11' ? 'checked' : 'unchecked' } onPress={() => setChecked1('11')}/>
                 <RadioButton.Item style={styles.radio} label="HTTP" value="12" status={ checked1 === '12' ? 'checked' : 'unchecked' } onPress={() => setChecked1('12')}/>
-                <RadioButton.Item style={styles.radio} label="Modbus" value="13" status={ checked1 === '13' ? 'checked' : 'unchecked' } onPress={() => setChecked1('13')}/>
-                <RadioButton.Item style={styles.radio} label="Wi-Fi" value="14" status={ checked1 === '14' ? 'checked' : 'unchecked' } onPress={() => setChecked1('14')}/>
+                <RadioButton.Item style={styles.radio} label="Wi-Fi" value="13" status={ checked1 === '13' ? 'checked' : 'unchecked' } onPress={() => setChecked1('13')}/>
+                <RadioButton.Item style={styles.radio} label="Modbus" value="14" status={ checked1 === '14' ? 'checked' : 'unchecked' } onPress={() => setChecked1('14')}/>
               </View>
               <View style={styles.View}>
                     <Text style={styles.titulo}>Questão 2</Text>
