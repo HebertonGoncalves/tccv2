@@ -86,37 +86,33 @@ somaNotasTotal()
   
     return (
             <SafeAreaView style={styles.container}>
-              <SafeAreaView><Text>Ajude o projeto ! compre pelos meus links de afiliado da Amazon !</Text></SafeAreaView>
+              <SafeAreaView></SafeAreaView>
                 <TouchableOpacity  style={styles.cartoes} onPress={() => navigation.navigate("Atividade 1 - Eletronica")}>
                     <Text style={[styles.marcador]}>{somaNotas1()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 1</Text>
                     <Text style={styles.texto}>Capítulo I</Text>
-                    <Text style={styles.texto}>Capítulo II</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 2 - Eletronica")}>
                     <Text style={styles.marcador}>{somaNotas2()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 2</Text>
-                    <Text style={styles.texto}>Capítulo III</Text>
-                    <Text style={styles.texto}>Capítulo IV</Text>
+                    <Text style={styles.texto}>Capítulo II</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 3 - Eletronica")}>
                     <Text style={styles.marcador}>{somaNotas3()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 3</Text>
-                    <Text style={styles.texto}>Capítulo V</Text>
-                    <Text style={styles.texto}>Capítulo VI</Text>
+                    <Text style={styles.texto}>Capítulo III</Text>
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.cartoes} onPress={() => navigation.navigate("Atividade 4 - Eletronica")}>
                     <Text style={styles.marcador}>{somaNotas4()}</Text>
                   <View style= {{flexDirection:'column'}}>
                     <Text style={styles.titulo}>Questionário 4</Text>
-                    <Text style={styles.texto}>Capítulo VII</Text>
-                    <Text style={styles.texto}>Capítulo VIII</Text>
+                    <Text style={styles.texto}>Capítulo IV</Text>
                   </View>
                 </TouchableOpacity>
             </SafeAreaView>

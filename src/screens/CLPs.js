@@ -33,44 +33,44 @@ export default function CLPs({navigation}) {
 
 
   const handleOpenPdf1 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 1
+    Linking.openURL(''); //pdf 1
   };
   const handleOpenPdf2 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 2
+    Linking.openURL(''); //pdf 2
   };
   const handleOpenPdf3 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 3
+    Linking.openURL(''); //pdf 3
   };
   const handleOpenPdf4 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //pdf 4
+    Linking.openURL(''); //pdf 4
   };
 
 
   const handleOpenVideo1 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 1
+    Linking.openURL(''); //video 1
   };
   const handleOpenVideo2 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 2
+    Linking.openURL(''); //video 2
   };
   const handleOpenVideo3 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 3
+    Linking.openURL(''); //video 3
   };
   const handleOpenVideo4 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //video 4
+    Linking.openURL(''); //video 4
   };
 
 
   const handleOpenMore1 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+    Linking.openURL(''); //aprenda mais
   };
   const handleOpenMore2 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+    Linking.openURL(''); //aprenda mais
   };
   const handleOpenMore3 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+    Linking.openURL(''); //aprenda mais
   };
   const handleOpenMore4 = () => {
-    Linking.openURL('https://www.youtube.com/watch?v=JmVLKc164eE'); //aprenda mais
+    Linking.openURL(''); //aprenda mais
   };
 
 
@@ -100,16 +100,16 @@ export default function CLPs({navigation}) {
                     <TouchableHighlight style={styles.menu} onPress={handleClosePdf}>
                       <View >
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf1}>
-                          <Text style={styles.textominicartao}>Cap. I: Introdução à Eletricidade: Conceitos Fundamentais e Princípios Básicos</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf2}>
-                          <Text style={styles.textominicartao}>Cap. II: Circuitos Elétricos: Leis de Ohm, Kirchhoff e Circuitos RL, RC e RLC</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf3}>
-                          <Text style={styles.textominicartao}>Cap. III: Fontes de Energia Elétrica: Geradores, Baterias e Fontes Alternativas</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenPdf4}>
-                          <Text style={styles.textominicartao}>Cap. IV: Dispositivos Eletrônicos: Diodos, Transistores e Circuitos Integrados</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                        </View>
                       </TouchableHighlight>
@@ -118,16 +118,16 @@ export default function CLPs({navigation}) {
                     <TouchableHighlight style={styles.menu} onPress={handleCloseVideo}>
                       <View >
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo1}>
-                          <Text style={styles.textominicartao}>Aula 1</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo2}>
-                          <Text style={styles.textominicartao}>Aula 2</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo3}>
-                          <Text style={styles.textominicartao}>Aula 3</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenVideo4}>
-                          <Text style={styles.textominicartao}>Aula 4</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                        </View>
                       </TouchableHighlight>
@@ -136,16 +136,16 @@ export default function CLPs({navigation}) {
                     <TouchableHighlight style={styles.menu} onPress={handleCloseMore}>
                       <View >
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore1}>
-                          <Text style={styles.textominicartao}>Site 1</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore2}>
-                          <Text style={styles.textominicartao}>Site 2</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore3}>
-                          <Text style={styles.textominicartao}>Site 3</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.minicartao} onPress={handleOpenMore4}>
-                          <Text style={styles.textominicartao}>Site 4</Text>
+                          <Text style={styles.textominicartao}>-</Text>
                         </TouchableOpacity>
                        </View>
                       </TouchableHighlight>

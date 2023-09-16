@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, TouchableOpacity, View, SafeAreaView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, SafeAreaView} from 'react-native';
 import { useState } from 'react';
 import * as Progress from 'react-native-progress';
-import ModeloAtividade from './src/components/ModeloAtividade';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ModeloAtividade from './src/components/ModeloAtividade';
 import Perguntas11 from './src/components/Perguntas/Perguntas11';
 import Perguntas12 from './src/components/Perguntas/Perguntas12';
 import Perguntas13 from './src/components/Perguntas/Perguntas13';
